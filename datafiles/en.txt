@@ -1,0 +1,367 @@
+/* CONTROL SCRIPTS */
+
+//generic controllers
+Bottom Face Button
+Right Face Button
+Left Face Button
+Top Face Button
+D-Pad Down
+D-Pad Left
+D-Pad Right
+D-Pad Up
+Start Button
+Select Button
+Right Shoulder
+Right Trigger
+Left Shoulder
+Left Trigger
+Left Stick (L3)
+Right Stick (R3)
+
+//sony controllers
+X
+Circle
+Square
+Triangle
+Options
+Touchpad Click
+
+//microsoft controllers
+Start
+Select
+
+//nintendo controllers
+Start / +
+Select / -
+
+//keyboard keys
+Alt
+Backspace
+Ctrl
+Down
+End
+Enter
+Escape
+Home
+Insert
+Left
+Shift
+Page Down
+Page Up
+Pause
+Right
+Space
+Tab
+Up
+
+//mouse buttons
+Mouse Left
+Mouse Right
+Mouse Middle
+Mouse Side #1
+Mouse Side #2
+
+//actions
+Move Up
+Move Down
+Move Left
+Move Right
+Attack
+Interact / Special
+Pause
+Press A Button...
+
+
+
+/* TITLE SCREEN + MENUS */
+
+Play
+Settings
+Credits
+Exit
+Back To Title Screen
+Play Story Mode
+Play Co-Op Story Mode
+Play Endless Arcade
+Graphics
+Sound
+Controls
+Back To Pause Screen
+Toggle Window Mode
+Toggle Lighting Type
+Guassian
+Retro
+Back To Settings
+Resume Playing
+Exit To Title Screen
+Select A Track
+Music
+SFX
+Choose A Class
+Adventurer
+Archer
+Mage
+Knight
+How Many Players?
+
+
+
+/* MUSIC TITLES */
+Title Screen
+Village
+Shop
+Inner Demons
+Fanfare
+Game Over
+
+
+
+/* LEVEL TITLES + SUBTITLES */
+Mushroom Forest
+Desert Canyon
+Snowy Mountain
+Caverns
+Shroomy Plains
+Shroomy Plateaus
+The Long Bridge
+Deep Forest
+Mushroom Grotto
+Mushroom Forest Village
+Desert Canyon Village
+Snowy Mountain Village
+Village Shop
+Alchemist's Shop
+Desert Hills
+Canyon Cliffs
+Lush Caves
+Rocky Hideout
+Mountain Path
+Snowy Peaks
+Icy Caves
+Snowy Grotto
+Dream World
+Dungeons
+Castle
+Castle Tower
+
+
+
+/* STUPID HTML5 & GXC STUFF */
+Click To Play!
+
+
+
+/* PLAYER CLASS SELECTION */
+Adventurer
+Slightly stronger, can wall jump
+Archer
+More HP, has grapple arrow
+Mage
+Builds SP quicker, can warp
+Knight
+Slightly more defense, can bash rocks
+
+
+
+/* MORE MENU SELECTIONS */
+Tutorial Stage
+Use up, down, left and right to move
+Use the attack button to do a basic attack
+Basic attacks will hurt enemies
+Use the interact button to jump off a wall
+You can climb narrow passages this way
+Use the interact button to shoot a grapple arrow
+You can reach far away places this way
+Use the interact button to warp
+You can get past thin walls this way
+Use the interact button to do a charge
+You can break through some walls this way
+This move will require and use your SP
+Use the interact or attack buttons to open chests
+Use the interact button to talk with NPC's
+Hello, I'm a test NPC
+This completes the tutorial
+
+
+
+/* DIALOGUE */
+//intro
+Everything was under control... 
+Then suddenly the day turned to night
+and everything changed...
+
+//mushroom forest
+Hiya, traveler!
+Silent type, eh? 
+Well, if you're looking for Mushroom Forest Village, it's up ahead!
+Keep an eye out for monsters, though! 
+Ever since that new mayor got in, things have been going downhill! 
+I sure wish he'd change his ways!
+
+Hey, everyone! It's them!
+Who?
+That hero with the psychic powers!
+I heard they can turn people good again by battling their inner demons!
+Codswallop! That's just fairy tales!
+DOES IT MATTER??
+If they get to the mayor, we're all gonners!
+GET EM!!!!
+
+Thank goodness you're here! We've made arrangements at the inn! 
+Feel free to grab some food and drink, and then get some rest!
+You've got a long night ahead of you!
+
+Hey bud, whatcha buyin'?
+Glad to do business wit'cha!
+
+I have wares... If you have coin!
+I'm glad to have helped you, hero!
+
+Man, can you believe the new mayor is siding with the monsters over us?
+Yeah, just follow the money. There's no profit in just being a good person.
+
+Ever since the mayor let the monsters run the paths going in and out of the village,
+it's been getting harder to buy and sell the supplies we need!
+
+I hear the mayor made a deal with the monsters outside the village. 
+They get the woods, he gets the cash. I hope what they say about you is true!
+
+You defeated the Mushroom Forest Village mayor's inner demons! His deals with the monsters outside the village have ceased!
+You failed to defeat the Mushroom Forest Village mayor's inner demons. The townsfolk continue to suffer...
+
+//desert canyon
+Hey, it's you!
+I just escaped from Desert Canyon Village up ahead!
+They could really use your help! That oil monger really messed things up!
+She hired a bunch of monsters to surround the village!
+They have to surrender their land or who knows what will happen!
+
+Well, look who decides to waltz on in here!
+Ha, this is the legendary hero? Doesn't look so strong to me!
+Hey boss, are we really sure we wanna fight this guy?
+Are you kidding me? Look at all this money we're making off that oil monger!
+ALRIGHT, BOYS, LET'S GET EM!
+
+Thank goodness you're here! We'll make arrangements at the inn!
+In the meantime, buy some things from us! We're glad to help you! 
+And we could use the support...
+
+Hey bud, whatcha buyin'?
+Thanks bud, every bit helps!
+
+Oh, it would be an honor to serve you!
+I hope this helps you resolve our town's problems!
+
+It's insane what people will do for oil...
+It's like they completely forget how to be a good person! 
+We're just trying to live peacefully.
+
+I know that the oil here is valuable... 
+But is it more valuable than human lives?
+
+That oil monger is just the start of the problem. 
+If she succeeds in usurping our land, it's going to set a terrible precedent.
+
+I'm sick of people at the top deciding to make our lives harder for profit.
+I'm glad someone like you exists! Beat the darkness out of her, bud!
+
+You defeated the Canyon Desert Village mayor's inner demons! Her deals with the monsters have ceased!
+You failed to defeat the Canyon Desert Village mayor's inner demons. The townsfolk continue to suffer...
+
+//snowy mountain
+Oh, hi there, hero!
+I just came from Snowy Mountain Village! That new commissioner is really something!
+He's supposed to protect us! Instead he's making deals with the monsters.
+They can loot and pillage, and he turns the other way for a cut of the profits!
+Come to think of it, they could use your help!
+
+Ooooh boy!! Hi there, hero! 
+Look, nothing against ya, I like the cut of your jib.
+But you ain't comin' nowhere near our treasure! 
+And you can forget fixing the commissioner!
+GET EM!!
+
+I wasn't expecting you! We'll make arrangements at the inn!
+In the meantime, buy some things from us! Everyone would love to see you!
+
+Well, look who it is! Been a long time!
+Thanks! We should catch up over a pint!
+
+As I live and breathe! Are you here to purchase something?
+Thanks! It definitely helps an old friend!
+
+
+It's really something! Even people in your home town can't resist temptation!
+If that commissioner only knew you were here! HA!
+
+Oh, I'm new here. Just moved in right before the old commissioner died.
+Wait, you're that guy everyone talks about! You used to live here??
+
+How's things been going, you rascal?
+You might have everyone else fooled, but...
+I remember you from the time you were 3 feet tall, and you were...
+Mischevious.
+
+Glad to see you back around these parts!
+Show that new commissioner what for! We don't need outsiders ruining this town!
+
+You defeat the Snowy Mountain Village commissioner's inner demons! His deals with the monsters have ceased!
+You failed to defeat the Snowy Mountain Village commissioner's inner demons. The townsfolk continue to suffer...
+
+
+
+/* SHOP SELECTIONS */
+Cookie
+Restores 1 HP point
+Chicken Drumstick
+Restores 3 HP points
+Rotisserie Chicken
+Restores all HP points
+
+Energy Potion
+Fills SP meter completely
+Discipline Potion
+Eliminates inverted control nightmare effects
+Courage Potion
+Eliminates HP lowering nightmare effects
+Elixir
+Eliminates all nightmare effects (Roulette is skipped)
+
+
+
+/* NIGHT TIME TEXT */
+Line up the roulette panes to eliminate nightmare effects!
+Inversed Horizontal Controls
+Your left and right buttons are reversed!
+Inversed Vertical Controls
+Your up and down buttons are reversed!
+Inversed Action Buttons
+Your attack and interact buttons are reversed!
+Half HP
+You can only obtain half your normal HP!
+Only 2 HP
+You can only obtain two HP at a time!
+Enemies Have More Health
+All enemies have an additional 2 HP!
+Fight through the level to get to the boss!
+Nightmare effects can be cured by collecting Aether! 
+Don't die or the villagers will continue suffering!
+
+
+
+/* CREDITS */
+Programming
+Graphics
+Music & Sound
+Level Design
+Play Testing
+French Translation
+Spanish Translation
+
+
+
+/* REFACTOR FOR JUMP */
+Jump
+
+//Below is an 80 character wide bar. Lines shouldn't exceed this in length
+|-----------------------------------------------------------------------------|

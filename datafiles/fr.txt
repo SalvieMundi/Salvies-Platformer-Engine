@@ -1,0 +1,367 @@
+/* CONTROL SCRIPTS */
+
+//generic controllers
+Bouton A 
+Bouton B
+Bouton X
+Bouton Y
+Pavé Directionnel Bas
+Pavé Directionnel Gauche
+Pavé Directionnel Droit
+Pavé Directionnel Haut
+Bouton Start
+Bouton Select
+Bouton d'Action Droit (R1)
+Gachette Droite (R2)
+Bouton d'Action Gauche (L1)
+Gachette Gauche (L2)
+Manche Gauche (L3)
+Manche Droit (R3)
+
+//sony controllers
+X
+Cercle
+Carré
+Triangle
+Options
+Bouton Ecran Tactile
+
+//microsoft controllers
+Start
+Select
+
+//nintendo controllers
+Start / +
+Select / -
+
+//keyboard keys
+Alt
+Retour En Arrière
+Ctrl
+Bas
+Fin
+Entrer
+Echape
+Home
+Insert
+Gauche
+Maj
+Page Bas
+Page Haut
+Pause
+Droit
+Espace
+Tab
+Haut
+
+//mouse buttons
+Bouton Gauche
+Bouton Droit
+Click Mollette
+Bouton Coté Souris #1
+Bouton Coté Souris #2
+
+//actions
+Avancé
+Reculer
+Bouger vers la Gauche
+Bouger vers la Droite
+Attaquer
+Interagir / Special
+Pause
+Appuyer sur le Bouton A...
+
+
+
+/* TITLE SCREEN + MENUS */
+
+Jouer
+Paramètres
+Credits
+Quitter
+Retour à l'Ecran d'Accueil
+Jouer en Mode Histoire
+Jouer en Mode Histoire Co-Op
+Jouer mode Arcades Infinies
+Graphiques
+Sons
+Contrôles
+Retour à l'Ecran de Pause
+Basculer en Mode Grand Ecran
+Basculer les Types de Luminosités
+Gaussien
+Rétro
+Retour au Paramètres
+Continuer de Jouer
+Quitter à l'Ecran d'Accueil
+Séléctionné une Piste
+Musiques
+SFX
+Choisir une Catégorie 
+Aventurier
+Archer
+Mage
+Soldat
+Combien de Joueurs?
+
+
+
+/* MUSIC TITLES */
+Ecran Titre
+Villages
+Magasins
+Démons Intérieurs
+Fanfare
+Game Over
+
+
+
+/* LEVEL TITLES + SUBTITLES */
+Forêt de Champignons
+Canyon Désertique
+Montagnes Enneigées
+Cavernes
+Plaines Champignons
+Plateau Champignons
+Le Long Pont
+Forêt Profonde
+Grotte Champignons
+Village de la Forêt Champignons
+Village du Canyon Désertique
+Village des Montagnes Enneigées
+Magasin du Village
+Magasin de l'Alchimiste
+Collines Désertiques
+Falaises du Canyon
+Grottes Luxuriantes
+Refuge Rocheux
+Chemin Montagneux
+Sommets Enneigés
+Grottes Glacées
+Grottes Enneigées
+Monde Imaginaire
+Donjons
+Chateau
+Tour du Chateau
+
+
+
+/* STUPID HTML5 & GXC STUFF */
+Clique Pour Jouer!
+
+
+
+/* PLAYER CLASS SELECTION */
+Aventurier
+Légèrement plus fort, peut sauter au murs
+Archer
+Plus de HP, a une flèche grapelin
+Mage
+Construit ses SP plus rapidement, peut se téléporter
+Soldat
+Un peu plus de défense, peut casser des rochers
+
+
+
+/* MORE MENU SELECTIONS */
+Tutoriel
+Utilisez haut, bas, gauche et droite pour vous déplacer
+Utilisez le bouton d'attaque pour faire une attaque basique
+Les attaques basiques blesseront les ennemis
+Utilisez le bouton d'interaction pour sauter d'un mur
+Vous pouvez gravir des passages étroits de cette façon
+Utilisez le bouton d'interaction pour tirer une flèche de grapelin
+Vous pouvez atteindre des endroits éloignés de cette façon
+Utilisez le bouton d'interaction pour vous téléporter
+Vous pouvez franchir passages étroits de cette façon
+Utilisez le bouton d'interaction pour effectuer une attaque chargeée
+Vous pouvez briser certains murs de cette façon
+Cette action nécessitera et utilisera vos SP
+Utilisez les boutons d'interaction ou d'attaque pour ouvrir les coffres
+Utilisez les boutons d'interaction pour parler avec les PNJ's
+Bonjour, je suis un PNJ test
+Le tutoriel est maintenant terminé
+
+
+
+/* DIALOGUE */
+//intro
+Tout était sous contrôle...
+Puis soudain le jour s'est transformé en nuit
+et tout a changé...
+
+//mushroom forest
+Salut, voyageur !
+Type silencieux, hein ?
+Eh bien, si vous cherchez le Village de la Forêt Champignons, c'est devant vous !
+Gardez un œil sur les monstres, cependant!
+Depuis l'arrivée de ce nouveau maire, les choses se gâtent !
+J'aimerais bien qu'il change ses habitudes !
+
+Salut tout le monde! C'est lui!
+Qui?
+Ce héros aux pouvoirs psychiques !
+J'ai entendu dire qu'il pouvaient à nouveau rendre les gens bons en combattant leurs démons intérieurs !
+Mais bon sang ! Ce ne sont que des contes de fées !
+EST-CE QUE CELA A GRANDE UNE IMPORTANCE??
+S'ils parviennent à arriver au maire, nous sommes tous foutus !
+CAPTUREZ-LES !!!!
+
+Dieu merci, vous êtes arrivé! Nous avons mis en place des aménagement à l'auberge !
+N'hésitez pas à prendre de la nourriture et des boissons, puis à vous reposer !
+Vous avez une longue nuit devant vous !
+
+Hé mon pote, qu'est-ce que t'achètes de beau ?
+Heureux d'faire affaires 'vec toi !
+
+J'ai de la marchandise... Si vous avez de l'argent !
+Je suis content de t'avoir aidé, héros !
+
+Mec, peux-tu croire que le nouveau maire se range du côté des monstres qui nous dominent ?
+Et ouais, poursuivez seulement l'argent. Il n'y a aucun profit à être une bonne personne de nos jours.
+
+Depuis que le maire a laissé les monstres courir à tout va dans les allées, entrant et sortant du village,
+il est de plus en plus difficile d'acheter et de vendre les fournitures dont nous avons besoin!
+
+J'ai entendu dire que le maire avait passé un marché avec les monstres à l'extérieur du village.
+Ils gardent les bois, il obtient l'argent. J'espère que ce qu'ils disent de toi est vrai!
+
+Vous avez vaincu les démons intérieurs du maire du Village de la Forêt Champignons ! Ses affaires avec les monstres à l'extérieur du village ont cessé !
+Vous n'avez pas réussi à vaincre les démons intérieurs du maire du Village de la Forêt Champignons. Les habitants continuent à souffrir...
+
+//desert canyon
+Hey, c'est toi !
+Je viens de m'échapper du Village du Canyon Désertique devant vous !
+Ils auraient vraiment besoin de votre aide ! Ce marchand de pétrole a vraiment tout gâché !
+Elle a engagé une bande de monstres pour encercler le village !
+Ils doivent abandonner leur terre ou qui sait ce qui leur arrivera !
+
+Eh bien, regardez qui décide de montrer le bout de son nez !
+Ha, c'est le héros légendaire? Il m'a pas l'air si fort !
+Hé boss, sommes-nous vraiment sûrs de vouloir combattre ce type ?
+Vous plaisantez j'espère? Regardez tout cet argent que nous gagnons avec ce marchand de pétrole !
+OK, LES GARS, ALLONS-Y !
+
+Dieu merci, vous êtes arrivez saint et sauf ! On s'arrangera pour l'auberge !
+En attendant, achetez des choses ! Nous sommes heureux de pouvoir vous aider dans votre combat!
+Et nous pourrions utiliser votre soutien...
+
+Hé mon pote, qu'est-ce que t'achètes de beau ?
+Merci p'tit gars, chaque geste compte !
+
+Oh, ce serait un honneur de vous servir !
+J'espère que cela vous aidera à résoudre les problèmes de notre ville !
+
+C'est fou ce que les gens font pour du pétrole...
+C'est comme si ils oubliaient complètement comment être une bonne personne !
+Nous essayons juste de vivre en paix.
+
+Je sais que le pétrole ici est précieux...
+Mais a-t-il plus de valeur que des vies humaines ?
+
+Ce marchand de pétrole n'est que le début du problème.
+Si elle réussit à dérober notre terre, cela créera un terrible agencement.
+
+J'en ai assez des gens au pouvoir qui décident de nous compliquer la vie pour le profit.
+Je suis content que quelqu'un comme vous existe ! Eliminez l'obscurité en elle, mon ami!
+
+Vous avez vaincu les démons intérieurs du maire du Village du Canyon Désertique ! Ses affaires avec les monstres ont cessé !
+Vous n'avez pas réussi à vaincre les démons intérieurs du maire du Village du Canyon Désertique. Les habitants continuent de souffrir...
+
+//snowy mountain
+Oh, bonjour, héros !
+Je viens d'arriver du Village des Montagnes Enneigées ! Ce nouveau commissaire est vraiment quelque chose!
+Il est censé nous protéger ! Au lieu de cela, il passe des accords avec les monstres.
+Ils peuvent piller et piller, et il nous tourne le dos pour une part des bénéfices !
+À bien y penser, ils pourraient avoir besoin de votre aide !
+
+Ooooh mais qui voici !! Salut, héros !
+Écoute, rien contre toi, j'aime la coupe de ton foc.
+Mais tu ne t'approches pas de notre trésor !
+Et vous tu oubliez ton idée d'aider le commissaire !
+ATTRAPEZ-LE !!
+
+Je ne t'attendais pas si tôt! On s'arrangera avec les gérants de l'auberge !
+En attendant, achetez-vous ce que vous avez besoin ! Tout le monde a hâte de vous rencontrez !
+
+Eh bien, regardez qui c'est ! Ça fait longtemps!
+Merci! On devrait se revoir pour une pinte !
+
+Mais qui voila ! Êtes-tu ici pour acheter quelque chose ?
+Merci! C'la aide certainement un vieil ami!
+
+
+C'est vraiment quelque chose ! Même les habitants de votre ville natale ne peuvent résister à la tentation !
+Si seulement le commissaire savait que vous étiez ici! HA!
+
+Oh, je suis nouveau ici. Je viens d'emménager juste avant la mort de l'ancien commissaire.
+Attends, vous es ce gars dont tout le monde parle ! Vous viviez donc ici??
+
+Comment ça va, petit gaillard ?
+Tu pourrait tromper tout le monde, mais...
+Je me souviens de toi à l'époque où tu mesurais 3 pieds, et tu étais...
+Malicieux.
+
+Content de te revoir dans ces lieux !
+Montre à ce nouveau commissaire ce qu'il en est ! Nous n'avons pas besoin d'étrangers qui ruine notre ville !
+
+Vous avez vaincu les démons intérieurs du commissaire du Village des Montagnes Enneigées ! Ses accords avec les monstres ont cessé !
+Vous n'avez pas réussi à vaincre les démons intérieurs du commissaire du Snowy Mountain Village. Les habitants continuent de souffrir...
+
+
+
+/* SHOP SELECTIONS */
+Cookie
+Restaure 1 point de HP
+Pilon de poulet
+Restaure 3 points HP
+Poulet rôti
+Restaure tous les points HP
+
+Potion énergisante
+Remplit complètement le compteur SP
+Potion de discipline
+Élimine les effets cauchemardesques des contrôles inversé
+Potion de courage
+Élimine les effets cauchemardesques de réduction de HP
+Élixir
+Élimine tous les effets cauchemardesques (la roulette est ignorée)
+
+
+
+/* NIGHT TIME TEXT */
+Alignez les volets de la roulette pour éliminer les effets cauchemardesques !
+Contrôles horizontales inversées
+Vos boutons gauche et droit sont inversés !
+Contrôles verticales inversées
+Vos boutons haut et bas sont inversés !
+Boutons d'action inversés
+Vos boutons d'attaque et d'interaction sont inversés !
+Moitié des HP
+Vous ne pouvez obtenir que la moitié de vos HP normaux !
+Seulement 2 CV
+Vous ne pouvez obtenir que deux HP à la fois !
+Les ennemis ont plus de HP
+Tous les ennemis ont 2 HP supplémentaires !
+Combattez à travers le niveau pour atteindre le boss !
+Les effets cauchemardesques peuvent être guéris en collectant de l'Aether !
+Ne mourez pas ou les villageois continueront à souffrir !
+
+
+
+/* CREDITS */
+Programming
+Graphiques
+Musiques & Sons
+Conception des niveaux
+Test de jeu
+Traduction française
+Traduction espagnole
+
+
+
+/* REFACTOR FOR JUMP */
+Sauté
+
+//Below is an 80 character wide bar. Lines shouldn't exceed this in length
+|-----------------------------------------------------------------------------|

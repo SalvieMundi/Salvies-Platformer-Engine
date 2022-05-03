@@ -1,0 +1,8 @@
+Lighting Variables
+
+lighting = holds all information regarding the object's lighting engine properties
+	isEmitter = boolean, whether this object emits light
+	distance = real, how far the light stretches in pixels
+	strength = real, how much the light penetrates the ambient darkness (0 to 1, or 0 to 100)
+	clr = the color the light emits (c_white means no color)
+	isCaster = boolean, whether this object casts shadows

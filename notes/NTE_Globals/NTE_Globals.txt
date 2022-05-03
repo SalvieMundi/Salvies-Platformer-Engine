@@ -1,0 +1,173 @@
+Global Variables
+
+camera = holds all values related to the camera
+	xPos = integer, the current x position in the room
+	yPos = integer, the current y position in the room
+	lerp = real, the amount to lerp by for smooth camera control (0 to 1, or 0 to 100)
+	target = object, the object to center the camera around
+	padding = integer, the amount of space around the target it can move before the camera tracks it
+	zoom = real, the amount to zoom the camera (0 to 1, or 0 to 100)
+	wd = integer, the current width of the camera
+	ht = integer, the current height of the camera
+	type = integer, the type of camera (cameraType.smooth, cameraType.snap)
+	deactivate = boolean, determines whether the camera will deactivate objects outside the view
+	exemptions = array of objects that will be exempted from deactivation
+	isShaking = boolean, whether the camera is currently shaking
+	shakeAmount = integer, the amount of pixels to shake by
+	shakeFrames = integer, how long to shake for in frames
+	tint = the color that is drawn over top of all objects in the room
+	tintAmount = real, value between 0 and 1 that represents how strong the tint is drawn
+	viewCamera = the currently assigned view_camera
+
+controllers = holds all values related to connected controllers / gamepads
+	gamepad1 = holds all values related to the first connected controller
+		guid = the controller's id
+		slot = the slot the controller occupies in game maker's weird 12 slot system
+		description = the controller's description
+		bottom = holds the name of the controller's bottom face button
+		left = holds the name of the controller's left face button
+		right = holds the name of the controller's right face button
+		top = holds the name of the controller's top face button
+		start = holds the name of the controller's "start" button
+		select = holds the name of the controller's "select" button
+		lb = holds the name of the controller's left shoulder button
+		lr = holds the name of the controller's left shoulder trigger
+		rb = holds the name of the controller's right shoulder button
+		rr = holds the name of the controller's right shoulder trigger
+	gamepad2 = holds all values related to the second connected controller
+	gamepad3 = holds all values related to the third connected controller
+	gamepad4 = holds all values related to the fourth connected controller
+	
+controls = holds all values related to controls
+	inputBlocked = boolean, whether to update the controls
+	player1 = holds all values related to controls for player 1
+		controller = holds all values related to the controller currently assigned to player 1
+			guid = the controller's id
+			description = the controller's description
+			bottom = holds the name of the controller's bottom face button
+			left = holds the name of the controller's left face button
+			right = holds the name of the controller's right face button
+			top = holds the name of the controller's top face button
+			start = holds the name of the controller's "start" button
+			select = holds the name of the controller's "select" button
+			lb = holds the name of the controller's left shoulder button
+			lr = holds the name of the controller's left shoulder trigger
+			rb = holds the name of the controller's right shoulder button
+			rr = holds the name of the controller's right shoulder trigger
+			rumble = real, how much rumble to send to this player's controller
+			clr = what color the game should attempt to set this user's controller's light to
+		mapping = holds the mapppings for the controls
+			up = holds the mapping of the up key
+			down = holds the mapping of the down key
+			left = holds the mapping of the left key
+			right = holds the mapping of the right key
+			pause = holds the mapping of the pause key
+			jump = holds the mapping of the jump key
+			attack = holds the mapping of the attack key
+			interact = holds the mapping of the interact key
+			special = holds the mapping of the special key
+			obtaining = string, the status of button remapping
+		up = holds all values related to the button mapped to up
+			isHeld = boolean, whether the button is currently held down
+			wasPressed = boolean, whether the button was pressed
+			wasReleased = boolean, whether the button was released
+		down = identical to up, but for down
+		left = identical to up, but for left
+		right = identical to up, but for right
+		start = identical to up, but for start
+		select = identical to up, but for select
+		jump = identical to up, but for jump
+		interact = identical to up, but for action
+		attack = identical to up, but for attack
+		special = identical to up, but for special
+	player2 = identical to player 1, but for player 2
+	player3 = identical to player 1, but for player 3
+	player4 = identical to player 1, but for player 4
+	
+debug = holds all information about the debug status of the game
+	isOn = boolean, whether debug mode is on
+	console = holds all information about the debug console
+		isSelected = whether the user's input is routed into the console
+		log = string, can be written to in code shows on the console
+		command = string, the current command written into the console
+		history = array of strings, holds the last 5 commands written into the console
+	
+language = holds all information regarding the game's language
+	current = integer, the currently shown language (langType.english, langType.french, langType.spanish)
+	text = an array of all strings in the game, in the current language
+
+lighting = holds all information regarding the game's lighting engine
+	ambient = real, how light the room is overall (0 to 1, or 0 to 100)
+	surface = the surface used to draw lights onto before drawing lights to the game screen
+	shouldShadowCast = boolean, whether lights should cast shadows or not
+	type = integer, the type of lighting to use (lightingType.gaussian, lightingType.retro)
+	
+music = holds all information about currently playing music
+	isPlaying = boolean, whether there is currently music playing
+	shouldPlay = boolean, whether music should be currently playing
+	tracks = array of BGM resources that should be played simultaneously, can be just one resource
+	shouldLoop = boolean, whether the music should loop or not
+	loopTime = real, the time in seconds that the track should restart from if the music is set to loop
+	vol = real, the global music volume (0 to 1, or 0 to 100)
+	fadeTime = integer, how long the music should fade in frames
+	fadeTo = real, the volume the music is fading to
+	fadeBy = real, the amount by which the volume is changed every frame of the fade
+	
+physics = holds all information regarding globally applied physics
+	grav = holds all information regarding globally applied gravity
+		useGlobal = boolean, whether the game should be using individual, per-object physics or global
+		type = integer, use directional or object-based gravity (gravType.directional or gravType.object)
+		dir = real, used when doing directional gravity to determine gravity angle
+		str = real, used to determine the strength of the gravity
+	
+resolution = holds all values related to game resolutions
+	internal = holds all values related to the resolution the game runs in
+		wd = integer, the internal width, or default windowed width
+		ht = integer, the internal height, or default windowed height
+		wdMultiplier = real, the amount to multiply the width by to stretch the screen horizontally
+		htMultiplier = real, the amount to multiply the height by to stretch the screen vertically
+	external = holds all values related to the resolution of the player's monitor or screen
+		wd = integer, the width of the player's display in pixels
+		ht = integer, the height of the player's display in pixels
+		changePollTime = integer, the time, in frames, by which to poll for screen size changes
+		
+rooms = holds all information regarding the game's rooms
+	levels = array of all the game's levels
+	menus = array of all the game's menus
+	title = string, the current room's title
+	subtitle = string, the current room's subtitle
+	banner = sprite, the current room's banner sprite
+	music = array of BGM this room should play
+	transition = holds all the information regarding room transitions
+		type = integer, type of transition that should be used 
+			   (transitionType.none, transitionType.fade, transitionType.swipe)
+		modifier = string, affects transition type (color for fade, direction for swipe) 
+		shouldFadeMusic = boolean, whether the music should be faded with the transition
+		time = integer, how long the transition should be in frames
+		by = real, the amount by which the transition is changed every frame
+		origin = room, the room we are transitioning from
+		destination = room, the room to transition to
+		xPos = integer, the x position at which to place the player, if applicable
+		yPos = integer, the y position at which to place the player, if applicable
+	
+sfx = holds all information about the game's sfx
+	list = array of all SFX resources that should be treated similarly
+	vol = real, the global sfx volume (0 to 1, or 0 to 100)
+	listener = holds all information about the game's listener
+		xPos = integer, the listener's current x position in the room
+		yPos = integer, the listener's current y position in the room
+		distance = integer, how far away from the listener, in pixels, a sfx can be heard from
+
+window = holds all values related to the window the game runs in
+	isFullscreen = boolean, whether the game is running in fullscreen or not
+	xPos = integer, the x position of the window on the player's screen (0 is left)
+	yPos = integer, the y position of the window on the player's screen (0 is top)
+	wd = integer, the width of the window (if fullscreen, same as resolution.external.width)
+	ht = integer, the height of the window (if fullscreen, same as resolution.external.height)
+	clr = sets the color of any area of the window that is not taken up by a view port (default c_black)
+	caption = sets the text of window when not in fullscreen mode
+	isFocused = boolean, whether the current window has focus (uses window_has_focus and os_is_paused)
+	surface = the surface we write the game to
+	
+	
+	

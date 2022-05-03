@@ -1,0 +1,371 @@
+/* CONTROL SCRIPTS */
+
+//generic controllers
+Botón Inferior
+Botón Derecho
+Botón Izquierdo
+Botón Superior
+D-Pad (Pad Direccional ) Inferior
+D-Pad Izquierdo
+D-Pad Derecho
+D-Pad Superior
+Iniciar
+Selecciones 
+Botón R-1
+Botón R-2
+Botón L-1
+Botón L2
+Joystick Izquierdo/Botón L3
+Joystick Derecho/Botón R3
+
+//sony controllers
+Botón equis
+Botón círculo
+Botón cuadrado
+Botón triángulo
+Opcciones
+Panel táctil/Botón del panel táctil
+
+//microsoft controllers
+Iniciar
+Selecciones
+
+//nintendo controllers
+Iniciar / +
+Selecciones / -
+
+//keyboard keys
+Alt
+Retroceder/Borrar
+Ctrl
+Flecha Abajo
+Fin
+Entrar
+Esc
+Inicio
+Insertar/Ins
+Flecha Izquierda
+Shift
+Página Abajo
+Página Arriba
+Pausa
+Flecha Derecha
+Espacio
+Tabulador/Tab
+Flecha Arriba
+
+//mouse buttons
+Tecla Izquierda
+Tecla Derecha
+Rueda
+Teclas Lado #1
+Teclas Lado #2
+
+//actions
+Subir
+Bajar
+Izquierda
+Derecha
+Ataque
+Interactuar / Especial
+Pausa
+Oprime el botón A...
+
+
+
+/* TITLE SCREEN + MENUS */
+
+Jugar
+Ajustes
+Creditos
+Salir/Dejar
+De vuelta para la pantalla títular
+Jugar Modo Historia
+Jugar Modo Cooperativo
+Jugar Arcade Interminable
+Gráficas
+Sonidos
+Controles
+De vuelta para la pantalla de pausa
+Toggle Window Mode
+Toggle Lighting Type
+Guassian
+Retro
+De vuelta para los Ajustes
+Continuar Juego
+Salida para la pantalla títular
+Selecciona una pista
+Música
+SFX
+Selecciona una clase
+Aventurero
+Arquero
+Mago
+Caballero
+¿Cuantos jugadores? 
+
+
+
+/* MUSIC TITLES */
+Pantalla títular
+Pueblo
+Tienda
+Demonios Internos
+Trompeteo
+Juego Terminado
+
+
+
+/* LEVEL TITLES + SUBTITLES */
+Bosque de Hongos
+Cañón del Desierto
+Montaña de Nieve
+Cavernas
+Llanuras de Champiñones
+Meseta de Champiñones
+El Puente Largo
+Bosque Profundo
+Gruta de Hongos
+El Pueblo del Bosque de Hongos
+El Pueblo del Cañón del Desierto
+El Pueblo de la Montaña de Nieve
+La Tienda del Pueblo
+La Tienda del Alquimista
+Las Colinas del Desierto
+Acantilados del Cañón
+Cavernas Lujosas
+Escondrijo Rocoso
+Sendero Montañoso
+Cimas de Nieve
+Cavernas Heladas
+Gruta de Nieve
+El Mundo de Sueños
+Calabozos
+Castillo
+La Torre del Castillo
+
+
+
+/* STUPID HTML5 & GXC STUFF */
+¡Oprima para Jugar!
+
+
+
+/* PLAYER CLASS SELECTION */
+Aventurero
+Levemente más fuerte, puede brincar paredes
+Arquero
+Más sanidad, tiene flecha de aferrar
+Mago
+Fortalece su especial más rapido, puede deformarse
+Caballero
+Levemente más defensas, puede romper piedras
+
+
+
+/* MORE MENU SELECTIONS */
+La Etapa de Tutoriales
+Utilice las flechas direccionales para moverse
+Utilice los botones de atacar para hacer ataques básicos
+Ataques básicos pueden herir a tus enemigos
+Utilice la tecla de Brincar para brincar de las paredes
+Puedes escalar pasos angostos de esta forma
+Utilice la tecla de Interactuar para disparar una flecha de agarre
+Puedes pasar paredes finas de esta forma
+Utilice la tecla de Interactuar para Deformar
+Puedes romper por paredes de esta forma
+Utilice la tecla de Interactuar para cargar contra tus enemigos
+Puedes romper algunas paredes de esta manera
+Este movimiento requiere usar tu movimiento Especial
+Utilice la tecla de Interactuar o los botones de atacar para abrir los cofres
+Utilice la tecla de Interactuar para hablarl con los PNJ's
+¡Hola! Soy un PNJ de Prueba
+Con esto completa este tutorial
+
+
+
+/* DIALOGUE */
+//intro
+Todo estaba bajo control...
+Y de momento los días se convirtieron en noches
+y todo cambió...
+
+//mushroom forest
+¡Hola, viajero!
+Eres de los callados, ¿no?
+Bueno, si estas buscando al Pueblo del Bosque de Hongos, ¡no te falta mucho!
+Pero no te descuides. ¡Hay monstruos en el area!
+Desde que ese nuevo alcalde empezo su carrera, las situaciones se han ido cuesta abajo.
+¡De por si deseo que cambie su forma de ser!
+
+¡Oye, todos! ¡Llegaron!
+¿Quien?
+¡El héroe con los poderes psíquicos!
+¡Yo escuché que ellos pueden convertir las personas entre buena gente otra vez después de batallar a sus demonios internos!
+Majadería, ¡esos son cuentos de hadas!
+¿¿¿Y QUE IMPORTA???
+Si llegan a acercarse al alcalde, ¡somos hombres muertos!
+¡¡¡AGARRENLOS!!!
+
+Gracias a Dios que llegaron. ¡Hicimos unos arreglos en el mesón!
+Tomen la libertad de comer y beber a su gusto, y por favor descansen.
+La mala cama, hace la noche larga.
+
+Oye capullo, ¿que vas a comprar?
+¡Un placer hacer negocios con usted!
+
+Tengo las mercancías... ¡si tienes las monedas! 
+¡Me alegro haber ayudarter, héroe!
+
+Que oso, ¿puedes creer que el alcalde se alió con los monstruos sobre nosotros?
+No me sorprende. Ni modo, sigue el dinero. No hay ganancias en solamente ser buena gente.
+
+Desde que el alcalde dejo a los monstruos arrasar con el camino que llega al Pueblo,
+se ha hecho más dificil vender y comprar las mercancías que se necesitan.
+
+Me dijo un pajarito que el alcalde hizo un trato con los monstruos fuera del Pueblo.
+Ellos se quedan con el monte, el se queda con la plata. ¡Espero que lo que dicen de ti sea cierto!
+
+¡Derrotastes el alcalde del Pueblo del Bosque de Hongos y sus demonios internos! ¡Sus negocios con los monstruos fuera del Pueblo se acabaron!
+Fracasastes a derrotar el alcalde del Pueblo del Bosque de Hongos y sus demonios internos. Los habitantes siguen sufriendo...
+
+//desert canyon
+¡Oye, tú!
+¡Acabo de escapar del Pueblo del Cañón del Desierto alli adelante! 
+¡De seguro van a necesitar tu ayuda! ¡Ese traficante de petróleo realmente lo embarró!
+¡Ella acabo de contratar una banda de monstruous para rodear el pueblo!
+¡La gente tienen que rendir su terreno y sus pertenencias o quien sabe que pueda pasar!
+
+Vaya, vaya, ¡mira quien decidió entrometerse!
+Ja, ¿este es el héroe de las leyendas? ¡No me parece tan fuerte! 
+Oye, Jefe, ¿estas seguro que quieres pelear con este tipo?
+¿Es un chiste, no? ¡Mira todo este dinero que estamos ganando de ese traficante!
+¡VALE, CHICOS, AGARRENLOS!
+
+¡Gracias a Dios que llegastes! ¡Haremos los arreglos necesarios en el mesón!
+Mientras tanto, ¡por favor compre nuestra mercancía! ¡Es un placer servirle!
+Y de por si necesitamos su apoyo... 
+
+Oye capullo, ¿que vas a comprar?
+Gracias capullo, ¡cada poquito ayuda!
+
+¡Oh, es un honor servirle!
+¡Espero que esto le ayude a resolver los problemas de nuestro pueblo!
+
+Es una locura lo que alguien puede hacer por petróleo...
+¡Es como si olvidaran por completo cómo ser una buena persona!
+Sólo estamos tratando de vivir en paz.
+
+Sé que el petróleo aquí es valioso...
+¿Pero en verdad es más valioso que las vidas humanas?
+
+Ese traficante de petróleo es solo la punta de lanza de nuestro problema.
+Si ella llega a invadir nuestro terreno, entonces si tenemos un precedente terrible.
+
+Estoy harto de ver los que mandan hacerle la vida imposible a los pobres por una ganancia.
+¡Me alegro que existe alguien como tú!¡ Sácale las tinieblas que tiene por dentro, capullo!
+
+¡Derrotastes el alcalde del Pueblo del Cañón del Desierto y sus demonios internos! ¡Sus negocios con los monstruos fuera del Pueblo se acabaron!
+Fracasastes a derrotar el alcalde del Pueblo del Cañón del Desierto y sus demonios internos. Los habitantes siguen sufriendo... 
+
+//snowy mountain
+¡Saludos, héroe!
+¡Acabo de llegar del Pueblo de la Montaña de Nieve!¡Ese comisario nuevo es realmente algo! 
+¡Se supone que el este protegiendonos! En vez lo que hace es negociando con esos monstruos.
+¡Nos roban a ciegas, y le importa absolutamente madres si significa que le dan una porcion de toda las ganancias!   
+¡Ahora que lo pienso, de seguro van a necesitar tu ayuda!
+
+¡¡Caramba!! ¡Hola, héroe!
+Mira, no tengo nada en contra tuya. Me caes bien.
+¡Pero no vas a acercarte a nuestro tesoro!
+¡Y olvidate de salvar al comisario!
+¡¡DETENLOS!!
+
+¡De seguro no te esperaba! ¡Haremos los arreglos en el mesón!
+Mientras tanto, ¡compre de nosotros! ¡La gente le encantaría verte!
+
+Vaya, ¡mira quien es! ¡Tanto tiempo de no verte!
+¡Gracias! ¡Deberemos compartir noticias sobre una fría!
+
+¡Como, vivo y respiro! ¿Estas aqui para comprar algo?
+¡Muchas Gracias! ¡Definitivamente ayuda a un viejo amigo!
+
+
+¡Es increible cuando la gente de tu propio pueblo no puede resistir las tentaciones!
+¡Si solo supiera ese comisario que estas aqui! ¡Ja!
+
+Perdone, soy nuevo aqui. Nos mudamos antes de que el comisario viejo muriera. 
+Espera, ¡tu eres el chamaco que todos conocen! ¿Tu vivías aqui?
+
+¿Como han sido las cosas, picarito?
+A caso tienes a todo el mundo engañado, pero...
+Yo todavía me recuerdo cuando eras de tres pies de alto en aquel entonces, y eras...
+Travieso.
+
+¡Me alegro verte de regreso en estas partes!
+¡Dale una pela a ese nuevo comisario! ¡Nosotros no necesitamos a ningun intruso arruinandonos nuestro pueblo!
+
+¡Derrotastes el comisario del Pueblo de la Montaña de Nieve y sus demonios internos! ¡Sus negocios con los monstruos se acabaron!
+Fracasastes a derrotar el comisario del Pueblo de la Montaña de Nieve y sus demonios internos. Los habitantes siguen sufriendo...
+
+
+
+/* SHOP SELECTIONS */  
+Galleta
+Restablece 1 punto de HP
+Muslo de Pollo
+Restablece 3 puntos de HP
+Pollo Asado 
+Repone el metro de HP completo
+
+Poción de Energía
+Llena el metro de SP completo
+Poción de Diciplina
+Elimina los efectos de las pesadillas de control invertidas
+Poción de Valentía
+Elimina los efectos de las pesadillas que bajan el HP
+Elixir
+Elimina todos los efectos de las pesadillas (Se hace rebotar la ruleta)
+
+
+
+/* NIGHT TIME TEXT */
+¡Empareja los paneles de ruleta para eliminar los efectos de las pesadillas!
+Controles Horizontales Inversos
+¡Los botones izquierdo y derecho estan invertidos!
+Controles Verticales Inversos
+¡Los botones de arriba y abajo estan invertidos!
+Botones de Acción Inversos
+¡Los botones de ataque y de interactuar estan invertidos!
+Mitad HP
+¡Solamente puedes obtener la mitad de tu HP normal!
+No más de 2 HP
+¡Solamente puedes obtener 2 puntos de HP a la vez!
+Enemigos tienen más puntos de salud
+¡Todos los enemigos tienen 2 HP adicional!
+¡Pelea a través del nivel para llegar a el patrón!
+¡Efectos de pesadillas se pueden curar cuando recoges Aether!
+¡No te mueras o los habitantes siguen sufriendo!
+
+
+
+/* CREDITS */
+Programaciones
+Gráficas
+Música y Sonidos
+Diseños de Niveles
+Pruebas de Juego
+Traducción en Francés
+Traducción en Español
+
+
+
+/* REFACTOR FOR JUMP */
+Brincar
+
+//Below is an 80 character wide bar. Lines shouldn't exceed this in length
+|-----------------------------------------------------------------------------|
+
+
+
+

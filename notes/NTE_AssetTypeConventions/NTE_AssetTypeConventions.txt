@@ -1,0 +1,19 @@
+Asset Type Conventions
+
+SPR = sprite
+OBJ = basic object
+PAR = parent object
+ENG = engine object
+FNT = font
+SFX = sound effect
+BGM = background music
+MNU = menu room
+LVL = playable room
+SEQ = sequence
+SCR = script
+SDR = shader
+TLS	= tile set
+TML = time line
+PTH = path
+NTE = note
+ANM = animation curve

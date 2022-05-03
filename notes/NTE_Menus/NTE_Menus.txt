@@ -1,0 +1,18 @@
+Menu Variables
+
+navigation = holds all information regarding how to navigate from this menu option
+	up = instance that should be selected when up is pressed
+	down = instance that should be selected when down is pressed
+	left = instance that should be selected when left is pressed
+	right = instance that should be selected when right is pressed
+	
+button
+	text = string, what this button says
+	spr = sprite, the graphic for this button
+	textClr = the color this button's text should be
+	sprClr = the color this button's sprite should be blended with
+	isSelected = boolean, whether the button is selected or not
+	selected = holds information about what should happen when this menu option is selected
+		textClr = the color this button's text should be when selected
+		sprClr = the color this button's sprite should be blended with when selected
+	action = struct, what should happen when this button is pressed? { script, variable array }

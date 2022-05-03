@@ -1,0 +1,11 @@
+Player Variables
+
+player = holds all information regarding the player object as it relates to player interaction
+	isPlayer1 = boolean, whether this object is controlled by player 1
+	isPlayer2 = boolean, whether this object is controlled by player 2
+	isPlayer3 = boolean, whether this object is controlled by player 3
+	isPlayer4 = boolean, whether this object is controlled by player 4
+	
+status = holds all variables regarding this object's status, not just for player use
+	state = the state the player is currently in
+	defaultState = the default state to put the player in if no state is set

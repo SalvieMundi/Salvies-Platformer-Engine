@@ -1,0 +1,31 @@
+Physics Variables
+
+physics = holds all physics variables
+	grav = holds all information regarding individual gravity
+		type = integer, use directional or object-based gravity (gravType.directional or gravType.object)
+		dir = real, used when doing directional gravity to determine gravity angle
+		str = real, used to determine the strength of the gravity
+	frict = holds all information regarding individual friction
+		h = real, force of friction against this object's movements horizontally
+		v = real, force of friction against this object's movements vertically
+	isBouncy = boolean, whether the object should bounce (true) or not (false)
+
+coords = holds all variables related to position
+	xPrev = real, previous x value
+	yPrev = real, previous y value
+	xPos = real, current x position
+	yPos = real, current y position
+	
+spd = holds all variables related to the object's speed
+	h = this object's current horizontal speed
+	v = this object's current vertical speed
+	hPrev = this object's horizontal speed last frame
+	vPrev = this object's vertical speed last frame
+	mx = the maximum speed, in pixels, this object can travel in any direction on any frame
+
+status = holds all variables regarding this object's status, not just for physics use
+	isGrounded = whether the object is on the ground or not
+	justLanded = whether this object just landed on the ground
+	groundingBlock = the object that this object has landed on
+	state = the state the object is currently in
+	defaultState = the default state to put the object in if no state is set

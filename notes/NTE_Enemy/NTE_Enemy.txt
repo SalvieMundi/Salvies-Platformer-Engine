@@ -1,0 +1,12 @@
+Enemy Variables
+
+ai = holds all information regarding this enemy's ai
+	type = integer, what type of enemy is this (aiType.walker, aiType.flyer)
+	shouldWalk = boolean, should this enemy be permitted to walk around when not targeting anything?
+	shouldJump = boolean, should this enemy be permitted to jump around when not targeting anything?
+	target = holds information about the target and how this enemy will interact with it
+		object = the object this enemy should target (if multiple exist, targets nearest)
+		distance = real, the overall distance from which the enemy will become aware of the target
+		xDiff = real, the horizontal area target must be within for this enemy to become aware of the target
+		yDiff = real, the vertical area target must be within for this enemy to become aware of the target
+		action = script, what should the enemy do when it becomes aware of the target?

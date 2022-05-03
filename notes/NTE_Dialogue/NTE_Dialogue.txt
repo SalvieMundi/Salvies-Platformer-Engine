@@ -1,0 +1,9 @@
+Dialogue Variables
+
+dialogue = holds all information regarding this object's dialogue
+	text = string, the line of text this speaker will say next
+	time = the amount of time to show the text for
+	spd = how fast the text will be written
+	sfx = the sfx to be used when the character speaks
+	modifier = integer, the effect of text (textEffect.shaky, textEffect.wavy, textEffect.small, textEffect.big)
+	isShowing = boolean, whether the dialogue is currently showing
