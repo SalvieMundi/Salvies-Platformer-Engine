@@ -1,7 +1,8 @@
 /// @function						calculate_physics(animate_gravity);
 /// @desc							runs all the physics based calculations, call in step
 /// @arg {bool} [animate_gravity]	whether to automatically handle the gravity changing animation
-function calculate_physics(animate_gravity = false) {
+/// @arg {int} [precision]			pixel precision of collision checks; a performance vs accuracy option
+function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 	#region handle changes in gravity
 	
 		if (animate_gravity) {
@@ -107,14 +108,14 @@ function calculate_physics(animate_gravity = false) {
 		instance_place_list(self.coords.xPos, self.coords.yPos, PAR_Wall, insiders, false);
 		
 		if (collidersSz == 0) {
-				self.status.justLanded = false;
-				self.status.isGrounded = false;
-				self.status.groundingBlock = pointer_null;
+			self.status.justLanded = false;
+			self.status.isGrounded = false;
+			self.status.groundingBlock = pointer_null;
 		} else {
 			for (var i=0; i<collidersSz; i++) {
 				wall = ds_list_find_value(colliders, i);
 		
-				if (wall != noone && !is_in_list(wall, insiders)) { 
+				if (wall != noone) { 
 					if (self.spd.h >= 0 && self.bbox_right <= wall.bbox_left && wall.status.left) {
 						if (!self.status.isGrounded) self.status.justLanded = true;
 						self.status.isGrounded = true;
@@ -142,6 +143,16 @@ function calculate_physics(animate_gravity = false) {
 					self.status.groundingBlock = pointer_null;
 				}
 			}
+		}
+		
+		// if no grounding block is set, show not grounded
+		if (self.status.groundingBlock == pointer_null) self.status.isGrounded = false;
+		
+		// if grounding block is not currently being collided with, show not grounded
+		if (self.status.isGrounded && !is_in_list(self.status.groundingBlock, colliders) && !is_in_list(self.status.groundingBlock, insiders)) {
+			self.status.justLanded = false;
+			self.status.isGrounded = false;
+			self.status.groundingBlock = pointer_null;
 		}
 		
 		ds_list_destroy(colliders);
@@ -186,37 +197,44 @@ function calculate_physics(animate_gravity = false) {
 
 		//check every pixel between current position and next position for collisions, react accordingly
 		if (self.physics.isCollidable) {
-			var hPrecision = _gravStr*0.5; //precision in pixels
+			var hPrecision = (precision != 0 ? precision : (_gravStr == 0 ? 1 : _gravStr*0.5)); //precision in pixels
 			var hInside = ds_list_create();
 			var hColliders = ds_list_create();
 			var hCollidersSz = 0;
+			var hMax = max(abs(self.spd.h), hPrecision);
 				
-			for (var i=0; i<=max(abs(self.spd.h), hPrecision); i+=hPrecision) {
-				instance_place_list(self.coords.xPos, self.coords.yPos, PAR_Wall, hInside, false);
+			for (var i=0; i<=hMax; i+=hPrecision) {
+				instance_place_list(round(self.coords.xPos), self.coords.yPos, PAR_Wall, hInside, false);
 				hCollidersSz = instance_place_list(self.coords.xPos + (sign(self.spd.h)*i), self.coords.yPos, PAR_Wall, hColliders, false);
 				
 				for (var j=0; j<hCollidersSz; j++) {
 					var hInst = ds_list_find_value(hColliders,j);
 				
-					if (hInst != noone && !is_in_list(hInst,hInside)) {
-						if (sign(self.spd.h) <= 0 && hInst.status.right) {
-							self.coords.xPos = self.coords.xPos + (sign(self.spd.h)*(i-hPrecision));
-							i = max(abs(self.spd.h), hPrecision);
-							if (self.physics.isBouncy) self.spd.h = -0.5 * self.spd.h;
-							else self.spd.h = 0;
-						}
+					if (precision != 0 && hInst != noone && (!is_in_list(hInst,hInside) || hInst.object_index == PAR_Wall) && hPrecision == precision) {
+						i -= hPrecision;
+						hPrecision = (_gravStr == 0 ? 1 : _gravStr*0.5);
+						hMax = max(abs(self.spd.h), hPrecision);
+					} else {
+						if (hInst != noone && !is_in_list(hInst,hInside)) {
+							if (sign(self.spd.h) <= 0 && hInst.status.right) {
+								self.coords.xPos = self.coords.xPos + (sign(self.spd.h)*(i-hPrecision));
+								i = hMax;
+								if (self.physics.isBouncy) self.spd.h = -0.5 * self.spd.h;
+								else self.spd.h = 0;
+							}
 	
-						if (sign(self.spd.h) >= 0 && hInst.status.left) {
-							self.coords.xPos = self.coords.xPos + (sign(self.spd.h)*(i-hPrecision));
-							i = max(abs(self.spd.h), hPrecision);
+							if (sign(self.spd.h) >= 0 && hInst.status.left) {
+								self.coords.xPos = self.coords.xPos + (sign(self.spd.h)*(i-hPrecision));
+								i = hMax;
+								if (self.physics.isBouncy) self.spd.h = -0.5 * self.spd.h;
+								else self.spd.h = 0;
+							}
+						} else if (hInst != noone && hInst.object_index == PAR_Wall) {
+							self.coords.xPos -= sign(self.spd.h);
+							i = hMax;
 							if (self.physics.isBouncy) self.spd.h = -0.5 * self.spd.h;
 							else self.spd.h = 0;
 						}
-					} else if (hInst != noone && hInst.object_index == PAR_Wall) {
-						self.coords.xPos -= sign(self.spd.h);
-						i = max(abs(self.spd.h), hPrecision);
-						if (self.physics.isBouncy) self.spd.h = -0.5 * self.spd.h;
-						else self.spd.h = 0;
 					}
 				}
 				
@@ -265,37 +283,44 @@ function calculate_physics(animate_gravity = false) {
 
 		//check every pixel between current position and next position for collisions, react accordingly
 		if (self.physics.isCollidable) {
-			var vPrecision = _gravStr*0.5;
+			var vPrecision = (precision != 0 ? precision : (_gravStr == 0 ? 1 : _gravStr*0.5));
 			var vInside = ds_list_create();
 			var vColliders = ds_list_create();
 			var vCollidersSz = 0;
+			var vMax = max(abs(self.spd.v), vPrecision);
 				
-			for (var i=0; i<max(abs(self.spd.v), vPrecision); i+=vPrecision) {
-				instance_place_list(self.coords.xPos, self.coords.yPos, PAR_Wall, vInside, false);
+			for (var i=0; i<=vMax; i+=vPrecision) {
+				instance_place_list(self.coords.xPos, round(self.coords.yPos), PAR_Wall, vInside, false);
 				vCollidersSz = instance_place_list(self.coords.xPos, self.coords.yPos + (sign(self.spd.v)*i), PAR_Wall, vColliders, false);
 				
 				for (var j=0; j<vCollidersSz; j++) {
 					var vInst = ds_list_find_value(vColliders,j);
-		
-					if (vInst != noone && !is_in_list(vInst,vInside)) {
-						if (sign(self.spd.v) <= 0 && vInst.status.bottom) {
-							self.coords.yPos = self.coords.yPos + (sign(self.spd.v)*(i-vPrecision));
-							i = max(abs(self.spd.v), vPrecision);
-							if (self.physics.isBouncy) self.spd.v = -0.5 * self.spd.v;
-							else self.spd.v = 0;
-						}
+			
+					if (precision != 0 && vInst != noone && (!is_in_list(vInst,vInside) || vInst.object_index == PAR_Wall) && vPrecision == precision) {
+						i -= vPrecision;
+						vPrecision = (_gravStr == 0 ? 1 : _gravStr*0.5);
+						vMax = max(abs(self.spd.v), vPrecision);
+					} else {
+						if (vInst != noone && !is_in_list(vInst,vInside)) {
+							if (sign(self.spd.v) <= 0 && vInst.status.bottom) {
+								self.coords.yPos = self.coords.yPos + (sign(self.spd.v)*(i-vPrecision));
+								i = vMax;
+								if (self.physics.isBouncy) self.spd.v = -0.5 * self.spd.v;
+								else self.spd.v = 0;
+							}
 	
-						if (sign(self.spd.v) >= 0 && vInst.status.top) {
-							self.coords.yPos = self.coords.yPos + (sign(self.spd.v)*(i-vPrecision));
-							i = max(abs(self.spd.v), vPrecision);
+							if (sign(self.spd.v) >= 0 && vInst.status.top) {
+								self.coords.yPos = self.coords.yPos + (sign(self.spd.v)*(i-vPrecision));
+								i = vMax;
+								if (self.physics.isBouncy) self.spd.v = -0.5 * self.spd.v;
+								else self.spd.v = 0;
+							}
+						} else if (vInst != noone && vInst.object_index == PAR_Wall) {
+							self.coords.yPos -= sign(self.spd.v);
+							i = vMax;
 							if (self.physics.isBouncy) self.spd.v = -0.5 * self.spd.v;
 							else self.spd.v = 0;
 						}
-					} else if (vInst != noone && vInst.object_index == PAR_Wall) {
-						self.coords.yPos -= sign(self.spd.v);
-						i = max(abs(self.spd.v), vPrecision);
-						if (self.physics.isBouncy) self.spd.v = -0.5 * self.spd.v;
-						else self.spd.v = 0;
 					}
 				}
 				
@@ -303,8 +328,8 @@ function calculate_physics(animate_gravity = false) {
 				ds_list_clear(vColliders);
 			}
 			
-			ds_list_destroy(vInside);
 			ds_list_destroy(vColliders);
+			ds_list_destroy(vInside);
 		}
 
 		// actually move

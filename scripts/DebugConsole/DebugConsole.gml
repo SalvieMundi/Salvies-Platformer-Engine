@@ -69,6 +69,9 @@ function debugging_get(command) {
 							if (variable_instance_exists(self.id, structName)) {
 								struct = variable_instance_get(self.id, structName);
 								myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
+							} else if (!null(struct) && !null(structName) && variable_struct_exists(struct, structName)) {
+								struct = variable_struct_get(struct, structName);
+								myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
 							} else {
 								global.debug.console.log += "No such struct [" + structName + "] exists in object [" + object + "]\n\n";
 								return;
@@ -96,7 +99,10 @@ function debugging_get(command) {
 					if (variable_global_exists(structName)) {
 						struct = variable_global_get(structName);
 						myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
-					} else {
+					} else if (!null(struct) && !null(structName) && variable_struct_exists(struct, structName)) {
+						struct = variable_struct_get(struct, structName);
+						myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
+					}  else {
 						global.debug.console.log += "No such struct [" + structName + "] exists as a global\n\n";
 						return;
 					}
@@ -124,7 +130,10 @@ function debugging_get(command) {
 				if (variable_global_exists(structName)) {
 					struct = variable_global_get(structName);
 					myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
-				} else {
+				} else if (!null(struct) && !null(structName) && variable_struct_exists(struct, structName)) {
+					struct = variable_struct_get(struct, structName);
+					myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
+				}  else {
 					global.debug.console.log += "No such struct [" + structName + "] exists as a global\n\n";
 					return;
 				}
@@ -195,7 +204,10 @@ function debugging_set(command) {
 						if (variable_instance_exists(self.id, structName)) {
 							struct = variable_instance_get(self.id, structName);
 							myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
-						} else {
+						} else if (!null(struct) && !null(structName) && variable_struct_exists(struct, structName)) {
+							struct = variable_struct_get(struct, structName);
+							myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
+						}  else {
 							global.debug.console.log += "No such struct [" + structName + "] exists in object [" + object + "]\n\n";
 							return;
 						}
@@ -231,7 +243,10 @@ function debugging_set(command) {
 				if (variable_global_exists(structName)) {
 					struct = variable_global_get(structName);
 					myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
-				} else {
+				} else if (!null(struct) && !null(structName) && variable_struct_exists(struct, structName)) {
+					struct = variable_struct_get(struct, structName);
+					myV = string_copy(myV, string_length(structName)+2, string_length(myV)-(string_length(structName)+1));
+				}  else {
 					global.debug.console.log += "No such struct [" + structName + "] exists as a global\n\n";
 					return;
 				}

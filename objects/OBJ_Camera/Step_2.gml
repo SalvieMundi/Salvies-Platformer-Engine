@@ -2,16 +2,12 @@
 
 #region handle camera zoom
 
-	if (global.camera.wd < (global.resolution.internal.wd * global.camera.zoom)) {
-		global.camera.wd -= (global.resolution.internal.wd - (global.resolution.internal.wd * global.camera.zoom)) * (global.camera.type == cameraType.smooth ? global.camera.lerp*0.25 : 1);
-	} else if (global.camera.wd > (global.resolution.internal.wd * global.camera.zoom))  {
-		global.camera.wd -= (global.resolution.internal.wd + (global.resolution.internal.wd * global.camera.zoom)) * (global.camera.type == cameraType.smooth ? global.camera.lerp*0.25 : 1);
-	}
-	
-	if (global.camera.ht < (global.resolution.internal.ht * global.camera.zoom)) {
-		global.camera.ht -= (global.resolution.internal.ht - (global.resolution.internal.ht * global.camera.zoom)) * (global.camera.type == cameraType.smooth ? global.camera.lerp*0.25 : 1);
-	} else if (global.camera.ht > (global.resolution.internal.ht * global.camera.zoom)) {
-		global.camera.ht -= (global.resolution.internal.ht + (global.resolution.internal.ht * global.camera.zoom)) * (global.camera.type == cameraType.smooth ? global.camera.lerp*0.25 : 1);
+	if (global.camera.type == cameraType.smooth) {
+		global.camera.wd = lerp(global.camera.wd, global.resolution.internal.wd*global.camera.zoom, global.camera.lerp*0.25);
+		global.camera.ht = lerp(global.camera.ht, global.resolution.internal.ht*global.camera.zoom, global.camera.lerp*0.25);
+	} else {
+		global.camera.wd = global.resolution.internal.wd * global.camera.zoom;
+		global.camera.ht = global.resolution.internal.ht * global.camera.zoom;
 	}
 	
 	camera_set_view_size(global.camera.viewCamera, global.camera.wd, global.camera.ht); 
@@ -58,6 +54,8 @@
 				instance_activate_object(global.camera.exemptions[i]);
 			}
 		}
+	} else {
+		instance_activate_all();
 	}
 
 #endregion

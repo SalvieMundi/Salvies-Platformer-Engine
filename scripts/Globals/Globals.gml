@@ -481,20 +481,14 @@ global.resolution =
 {	
 	internal : {
 		wd: 640, 
-		ht: 360, 
-		wdMultiplier: 1, 
-		htMultiplier: 1 
+		ht: 360
 	},
 	external : {
 		wd: display_get_width(),
-		ht: display_get_height(),
-		changePollTime: 30
+		ht: display_get_height()
 	}
-}
+};
 								
-global.resolution.internal.wdMultiplier = global.resolution.external.wd / global.resolution.internal.wd; //used to stretch to screen
-global.resolution.internal.htMultiplier = global.resolution.external.ht / global.resolution.internal.ht; //used to stretch to screen
-
 global.camera = 
 {
 	xPos : 0,

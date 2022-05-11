@@ -7,6 +7,7 @@
     {"id":{"name":"SPR_GaussianLight","path":"sprites/SPR_GaussianLight/SPR_GaussianLight.yy",},"order":0,},
     {"id":{"name":"OBJ_PassthruWallBottom","path":"objects/OBJ_PassthruWallBottom/OBJ_PassthruWallBottom.yy",},"order":2,},
     {"id":{"name":"PlayerStates","path":"scripts/PlayerStates/PlayerStates.yy",},"order":0,},
+    {"id":{"name":"Macros","path":"scripts/Macros/Macros.yy",},"order":2,},
     {"id":{"name":"SPR_PassthruWallBottom","path":"sprites/SPR_PassthruWallBottom/SPR_PassthruWallBottom.yy",},"order":3,},
     {"id":{"name":"NTE_Physics","path":"notes/NTE_Physics/NTE_Physics.yy",},"order":2,},
     {"id":{"name":"SPR_SoundObject","path":"sprites/SPR_SoundObject/SPR_SoundObject.yy",},"order":6,},
@@ -20,6 +21,7 @@
     {"id":{"name":"Globals","path":"scripts/Globals/Globals.yy",},"order":1,},
     {"id":{"name":"NTE_Enemy","path":"notes/NTE_Enemy/NTE_Enemy.yy",},"order":7,},
     {"id":{"name":"InstantiationScripts","path":"scripts/InstantiationScripts/InstantiationScripts.yy",},"order":0,},
+    {"id":{"name":"Sound1","path":"sounds/Sound1/Sound1.yy",},"order":0,},
     {"id":{"name":"OBJ_PassthruWallTop","path":"objects/OBJ_PassthruWallTop/OBJ_PassthruWallTop.yy",},"order":1,},
     {"id":{"name":"SPR_PassthruWallTop","path":"sprites/SPR_PassthruWallTop/SPR_PassthruWallTop.yy",},"order":4,},
     {"id":{"name":"SPR_MainObject","path":"sprites/SPR_MainObject/SPR_MainObject.yy",},"order":4,},
@@ -47,7 +49,6 @@
     {"id":{"name":"PAR_Player","path":"objects/PAR_Player/PAR_Player.yy",},"order":0,},
     {"id":{"name":"SPR_DialogueBoxTail","path":"sprites/SPR_DialogueBoxTail/SPR_DialogueBoxTail.yy",},"order":1,},
     {"id":{"name":"SPR_CameraObject","path":"sprites/SPR_CameraObject/SPR_CameraObject.yy",},"order":0,},
-    {"id":{"name":"CameraScripts","path":"scripts/CameraScripts/CameraScripts.yy",},"order":1,},
     {"id":{"name":"CleanupScripts","path":"scripts/CleanupScripts/CleanupScripts.yy",},"order":0,},
     {"id":{"name":"SPR_Trigger","path":"sprites/SPR_Trigger/SPR_Trigger.yy",},"order":7,},
     {"id":{"name":"NTE_Dialogue","path":"notes/NTE_Dialogue/NTE_Dialogue.yy",},"order":4,},
@@ -65,7 +66,7 @@
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
   ],
-  "isDnDProject": false,
+  "defaultScriptType": 1,
   "isEcma": false,
   "configs": {
     "name": "Default",
@@ -105,7 +106,6 @@
     {"folderPath":"folders/Objects/Physics.yy","order":4,"resourceVersion":"1.0","name":"Physics","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Player States.yy","order":5,"resourceVersion":"1.0","name":"Player States","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Global Objects.yy","order":6,"resourceVersion":"1.0","name":"Global Objects","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Scripts/Camera.yy","order":6,"resourceVersion":"1.0","name":"Camera","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Controls.yy","order":7,"resourceVersion":"1.0","name":"Controls","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Files.yy","order":8,"resourceVersion":"1.0","name":"Files","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Debugging.yy","order":9,"resourceVersion":"1.0","name":"Debugging","tags":[],"resourceType":"GMFolder",},
@@ -114,7 +114,7 @@
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
-    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
+    {"isScaled":true,"compressFormat":"bz2","autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"fr.txt","resourceType":"GMIncludedFile",},
@@ -122,7 +122,7 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"en.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.2.1.618",
+    "IDEVersion": "2022.3.0.625",
   },
   "resourceVersion": "1.5",
   "name": "SalviesEngine",
