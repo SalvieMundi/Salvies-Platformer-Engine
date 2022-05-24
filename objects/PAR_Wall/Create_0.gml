@@ -1,5 +1,7 @@
 /// @description Instantiate variables
 
+event_inherited();
+
 status = 
 {
 	top : true,

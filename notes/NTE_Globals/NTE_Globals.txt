@@ -97,10 +97,10 @@ language = holds all information regarding the game's language
 	text = an array of all strings in the game, in the current language
 
 lighting = holds all information regarding the game's lighting engine
-	ambient = real, how light the room is overall (0 to 1, or 0 to 100)
+	ambient = real, how light the room is overall (0 to 1, 0 meaning no light, 1 meaning full ambient light)
 	surface = the surface used to draw lights onto before drawing lights to the game screen
 	shouldShadowCast = boolean, whether lights should cast shadows or not
-	type = integer, the type of lighting to use (lightingType.gaussian, lightingType.retro)
+	lightType = integer, the type of lighting to use (lightingType.gaussian, lightingType.retro)
 	
 music = holds all information about currently playing music
 	isPlaying = boolean, whether there is currently music playing

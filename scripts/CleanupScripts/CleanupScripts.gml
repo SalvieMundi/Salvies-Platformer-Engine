@@ -16,3 +16,9 @@ function cleanup_physics_structs() {
 function cleanup_player_structs() {
 	if (variable_instance_exists(self.id, "player")) delete player;
 }
+
+/// @function						cleanup_lighting_structs();
+/// @desc							used to properly delete all lighting related structs from an object
+function cleanup_lighting_structs() {
+	if (variable_instance_exists(self.id, "lighting")) delete lighting;
+}

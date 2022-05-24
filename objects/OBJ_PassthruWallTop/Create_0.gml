@@ -1,5 +1,7 @@
 /// @description Instantiate variables
 
+event_inherited();
+
 status = 
 {
 	top : true,
@@ -9,3 +11,5 @@ status =
 	sticky : false,
 	icy : false
 }
+
+self.lighting.distance = 128;

@@ -1,3 +1,3 @@
 /// @description Don't draw self
 
-if (global.debug.isOn) draw_self();
+dont_draw_self();

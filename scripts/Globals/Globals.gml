@@ -435,7 +435,8 @@ global.debug =
 		isSelected : false,
 		log : "",
 		command : "",
-		history : []
+		history : ["/", "/", "/", "/", "/"],
+		entry : 0
 	}
 };
 
@@ -443,14 +444,6 @@ global.language =
 {
 	current : langType.english,
 	text : []
-};
-
-global.lighting = 
-{
-	ambient : 1,
-	surface : pointer_null,
-	shouldShadowCast : true,
-	type : lightingType.gaussian
 };
 
 global.music = 
@@ -488,20 +481,34 @@ global.resolution =
 		ht: display_get_height()
 	}
 };
+
+global.lighting = 
+{
+	ambient : 0.2,
+	surface : surface_create(round_to_smallest_power_two(global.resolution.internal.wd), round_to_smallest_power_two(global.resolution.internal.ht)),
+	shouldShadowCast : true,
+	lightingType : lightingType.gaussian
+};
 								
 global.camera = 
 {
 	xPos : 0,
 	yPos : 0,
+	xPrev : 0,
+	yPrev : 0,
+	xFrameskip : 0,
+	yFrameskip : 0,
 	target : PAR_Player,
 	padding : 50,
 	lerp : 0.05,
 	wd : global.resolution.internal.wd,
 	ht : global.resolution.internal.ht,
+	camR : global.resolution.internal.wd,
+	camB : global.resolution.internal.ht,
 	zoom : 1,
 	type : cameraType.smooth,
 	deactivate : true,
-	exemptions : [PAR_Wall, PAR_GravityEmitter, PAR_Player, OBJ_Controls, OBJ_Debug],
+	exemptions : [PAR_Wall, PAR_GravityEmitter, PAR_Player, OBJ_Controls, OBJ_Debug, OBJ_Lighting, PAR_LightEmitter],
 	isShaking : false,
 	shakeAmount : 1,
 	shakeFrames : 5,

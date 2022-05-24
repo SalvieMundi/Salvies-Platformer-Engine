@@ -16,7 +16,8 @@ enum langType {
 
 enum lightingType {
 	gaussian,
-	retro
+	retroBanded,
+	retroDithered
 }
 
 enum transitionType {

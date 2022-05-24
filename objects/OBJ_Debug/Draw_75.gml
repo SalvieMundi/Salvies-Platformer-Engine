@@ -15,6 +15,8 @@ if (global.debug.isOn) {
 		draw_set_halign(fa_right);
 		draw_text(625, 15, "FPS: " + string(floor(fps_real)));
 		draw_text(625, 25, "Instances: " + string(instance_count));
+		draw_text(625, 35, "Lights: " + string(array_length(OBJ_Lighting.lights)));
+		draw_text(625, 45, "Casters: " + string(array_length(OBJ_Lighting.casters)));
 		draw_set_alpha(1);
 	} else {
 		if (!surface_exists(global.window.surface)) global.window.surface = surface_create(round_to_smallest_power_two(global.resolution.internal.wd), round_to_smallest_power_two(global.resolution.internal.ht));
@@ -32,6 +34,8 @@ if (global.debug.isOn) {
 		draw_set_halign(fa_right);
 		draw_text(625, 15, "FPS: " + string(floor(fps_real)));
 		draw_text(625, 25, "Instances: " + string(instance_count));
+		draw_text(625, 35, "Lights: " + string(array_length(OBJ_Lighting.lights)));
+		draw_text(625, 45, "Casters: " + string(array_length(OBJ_Lighting.casters)));
 		draw_set_alpha(1);
 		surface_reset_target();
 		var _externalw = global.resolution.external.wd*(surface_get_width(global.window.surface)/global.resolution.internal.wd);

@@ -14,3 +14,4 @@ view_enabled = true;
 depth = -1000;
 
 alarm[0] = 30; //resize window every half a second
+alarm[1] = 2; //do deactivation every 2 frames

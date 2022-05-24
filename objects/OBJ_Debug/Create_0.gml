@@ -7,3 +7,5 @@ global.console = {
 	history : [],
 	entry : 0
 };
+
+self.depth = -10000;

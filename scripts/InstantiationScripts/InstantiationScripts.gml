@@ -115,3 +115,43 @@ function instantiate_player_structs() {
 		self.status.defaultState = playerState.free;
 	}
 }
+
+/// @function						instantiate_light_emitter_structs();
+/// @desc							used to properly create all light emitter related structs in an object
+function instantiate_light_emitter_structs() {
+	if (!variable_instance_exists(self.id, "lighting")) {
+		self.lighting = {
+			isEmitter : true,
+			distance : 1,
+			strength : 1,
+			clr : c_white,
+			flicker : FLICKER_STANDARD,
+			surface : noone
+		};
+	} else {
+		self.lighting.isEmitter = true;
+		self.lighting.distance = 1;
+		self.lighting.strength = 1;
+		self.lighting.clr = c_white;
+		self.lighting.flicker = FLICKER_STANDARD;
+		self.lighting.surface = noone;
+	}
+}
+
+/// @function						instantiate_shadow_caster_structs();
+/// @desc							used to properly create all shadow casting related structs in an object
+function instantiate_shadow_caster_structs() {
+	if (!variable_instance_exists(self.id, "lighting")) {
+		self.lighting = {
+			isCaster : true,
+			distance : 2048,
+			strength : 1,
+			clr : c_black
+		};
+	} else {
+		self.lighting.isCaster = true;
+		self.lighting.distance = 2048;
+		self.lighting.strength = 1;
+		self.lighting.clr = c_black;
+	}
+}

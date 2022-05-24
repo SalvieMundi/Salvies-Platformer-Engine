@@ -119,3 +119,17 @@ function round_to_smallest_power_two(number) {
 	else if (number > 2) return 4;
 	else return 2;
 }
+
+/// @function							compare_depth(elm1, elm2);
+/// @desc								used to sort elements of an array by their depths
+/// @arg {instance} elm1				current instance element in the array
+/// @arg {instance} elm2				next instance element in the array
+function compare_depth(elm1, elm2) {
+	return elm2.depth - elm1.depth;
+}
+
+/// @function							dont_draw_self();
+/// @desc								simple script which does not draw self unless debug is turned on
+function dont_draw_self() {
+	if (global.debug.isOn) draw_self();
+}
