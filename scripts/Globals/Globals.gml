@@ -508,7 +508,7 @@ global.camera =
 	zoom : 1,
 	type : cameraType.smooth,
 	deactivate : true,
-	exemptions : [PAR_Wall, PAR_GravityEmitter, PAR_Player, OBJ_Controls, OBJ_Debug, OBJ_Lighting, PAR_LightEmitter],
+	exemptions : [PAR_Wall, PAR_GravityEmitter, PAR_Player, OBJ_Controls, OBJ_Debug, OBJ_Lighting, OBJ_Camera],
 	isShaking : false,
 	shakeAmount : 1,
 	shakeFrames : 5,

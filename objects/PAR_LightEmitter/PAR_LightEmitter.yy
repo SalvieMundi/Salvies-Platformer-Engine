@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -24,7 +25,13 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
-  "properties": [],
+  "properties": [
+    {"varType":7,"value":"$ffffff","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"lightColor","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"1","rangeEnabled":false,"rangeMin":0.0,"rangeMax":1.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"lightStrength","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"1","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"lightDistance","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"FLICKER_STANDARD","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"lightFlicker","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":5,"value":"pointer_null","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"lightSprite","tags":[],"resourceType":"GMObjectProperty",},
+  ],
   "overriddenProperties": [],
   "parent": {
     "name": "Lighting",

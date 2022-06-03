@@ -13,7 +13,7 @@ if (global.debug.isOn) {
 		draw_set_valign(fa_top);
 		draw_text_ext(15, 315, global.debug.console.command + (current_second % 2 == 0 ? "|" : ""), 10, 135);
 		draw_set_halign(fa_right);
-		draw_text(625, 15, "FPS: " + string(floor(fps_real)));
+		draw_text(625, 15, "FPS: " + string(floor(fps_real)) + " / " + string(GAME_FPS));
 		draw_text(625, 25, "Instances: " + string(instance_count));
 		draw_text(625, 35, "Lights: " + string(array_length(OBJ_Lighting.lights)));
 		draw_text(625, 45, "Casters: " + string(array_length(OBJ_Lighting.casters)));
@@ -32,7 +32,7 @@ if (global.debug.isOn) {
 		draw_set_valign(fa_top);
 		draw_text_ext(15, 315, global.debug.console.command + (current_second % 2 == 0 ? "|" : ""), 10, 135);
 		draw_set_halign(fa_right);
-		draw_text(625, 15, "FPS: " + string(floor(fps_real)));
+		draw_text(625, 15, "FPS: " + string(floor(fps_real)) + " / " + string(GAME_FPS));
 		draw_text(625, 25, "Instances: " + string(instance_count));
 		draw_text(625, 35, "Lights: " + string(array_length(OBJ_Lighting.lights)));
 		draw_text(625, 45, "Casters: " + string(array_length(OBJ_Lighting.casters)));

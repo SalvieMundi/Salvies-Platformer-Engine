@@ -14,6 +14,7 @@
     {"id":{"name":"NTE_Physics","path":"notes/NTE_Physics/NTE_Physics.yy",},"order":2,},
     {"id":{"name":"SPR_SoundObject","path":"sprites/SPR_SoundObject/SPR_SoundObject.yy",},"order":6,},
     {"id":{"name":"FNT_DebugConsole","path":"fonts/FNT_DebugConsole/FNT_DebugConsole.yy",},"order":0,},
+    {"id":{"name":"SPR_FlashLight","path":"sprites/SPR_FlashLight/SPR_FlashLight.yy",},"order":3,},
     {"id":{"name":"OBJ_PassthruWallRight","path":"objects/OBJ_PassthruWallRight/OBJ_PassthruWallRight.yy",},"order":4,},
     {"id":{"name":"LanguageScripts","path":"scripts/LanguageScripts/LanguageScripts.yy",},"order":1,},
     {"id":{"name":"SPR_PassthruWallRight","path":"sprites/SPR_PassthruWallRight/SPR_PassthruWallRight.yy",},"order":6,},
@@ -130,7 +131,7 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"en.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.3.0.625",
+    "IDEVersion": "2022.5.0.8",
   },
   "resourceVersion": "1.5",
   "name": "SalviesEngine",

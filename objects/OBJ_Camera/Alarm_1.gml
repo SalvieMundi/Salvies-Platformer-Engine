@@ -3,13 +3,20 @@
 #region deactivate any instances far outside the camera view
 
 	if (global.camera.deactivate) {
-		instance_deactivate_region(global.camera.xPos - global.camera.padding, global.camera.yPos - global.camera.padding, global.camera.camR + global.camera.padding, global.camera.camB + global.camera.padding, false, true);
-		instance_activate_region(global.camera.xPos - global.camera.padding, global.camera.yPos - global.camera.padding, global.camera.camR + global.camera.padding, global.camera.camB + global.camera.padding, true);
-		if (!null(global.camera.target)) instance_activate_object(global.camera.target);
-		if (!null(global.camera.exemptions) && is_array(global.camera.exemptions)) {
-			var arrayLength = array_length(global.camera.exemptions);
-			for (var i=0; i<arrayLength; i++) {
-				instance_activate_object(global.camera.exemptions[i]);
+		var viewL, viewR, viewT, viewB, target, exemptions, arrayLength;
+		viewL = global.camera.xPos - global.camera.padding;
+		viewT = global.camera.yPos - global.camera.padding;
+		viewR = global.camera.camR + global.camera.padding;
+		viewB = global.camera.camB + global.camera.padding;
+		target = global.camera.target;
+		exemptions = global.camera.exemptions;
+		arrayLength = array_length(exemptions);
+		
+		instance_activate_all();
+		
+		with (all) {
+			if (collision_rectangle(viewL, viewT, viewR, viewB, self.id, false, false) != noone && !variable_instance_exists(self.id, "lighting") && !is_in_list(self.object_index, exemptions) && self.object_index != target) {
+				instance_deactivate_object(self.id);
 			}
 		}
 	} else {
@@ -18,4 +25,4 @@
 
 #endregion
 
-alarm[1] = 2; //do deactivation every 2 frames
+alarm[1] = GAME_FPS / 15; // do deactivation every 15th of a second

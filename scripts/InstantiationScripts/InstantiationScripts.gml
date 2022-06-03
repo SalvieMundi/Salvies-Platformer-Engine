@@ -126,7 +126,9 @@ function instantiate_light_emitter_structs() {
 			strength : 1,
 			clr : c_white,
 			flicker : FLICKER_STANDARD,
-			surface : noone
+			lightSurface : noone,
+			shadowSurface : noone,
+			lightSprite : pointer_null
 		};
 	} else {
 		self.lighting.isEmitter = true;
@@ -134,7 +136,9 @@ function instantiate_light_emitter_structs() {
 		self.lighting.strength = 1;
 		self.lighting.clr = c_white;
 		self.lighting.flicker = FLICKER_STANDARD;
-		self.lighting.surface = noone;
+		self.lighting.lightSurface = noone;
+		self.lighting.shadowSurface = noone;
+		self.lighting.lightSprite = pointer_null;
 	}
 }
 

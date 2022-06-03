@@ -1,4 +1,4 @@
-/// @description Get previous positions
+/// @description Handle optimizations
 
 #region get previous camera positions
 

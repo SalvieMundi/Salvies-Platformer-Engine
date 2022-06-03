@@ -133,3 +133,33 @@ function compare_depth(elm1, elm2) {
 function dont_draw_self() {
 	if (global.debug.isOn) draw_self();
 }
+
+/// @function							hex_to_number(hex_string);
+/// @desc								takes a hex string and turns it into an integer
+/// @arg {string} hex_string			hex code as a string
+function hex_to_number(hex_string) {
+	var num = 0, currentChar, strLen;
+	while(string_length(hex_string) > 0) {
+		currentChar = string_upper(string_copy(hex_string,0,1));
+		strLen = string_length(hex_string)-1;
+		hex_string = string_copy(hex_string,1,strLen);
+		switch (currentChar) {
+			case "F" : num += 15*(power(16,strLen)); break;
+			case "E" : num += 14*(power(16,strLen)); break;
+			case "D" : num += 13*(power(16,strLen)); break;
+			case "C" : num += 12*(power(16,strLen)); break;
+			case "B" : num += 11*(power(16,strLen)); break;
+			case "A" : num += 10*(power(16,strLen)); break;
+			default : num += int64(currentChar)*(power(16,strLen));
+		}
+	}
+	return num;
+}
+
+/// @function							color_from_html_hex(html_color);
+/// @desc								takes a color from html hex syntax (#RRGGBB) and makes a gm color
+/// @arg {string} html_color			color with or without pound sign
+function color_from_html_hex(html_color) {
+	var str = string_replace(html_color, "#", "");
+	return make_color_rgb(hex_to_number(string_copy(str,1,2)), hex_to_number(string_copy(str,3,2)), hex_to_number(string_copy(str,5,2)));
+}

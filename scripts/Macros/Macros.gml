@@ -20,8 +20,8 @@
 #macro LIGHT_HT sprite_get_height(SPR_GaussianLight)
 
 // FLICKERS : easy to remember flicker amounts for lights
-// NONE : saves performance as light won't need to be redrawn
-// STANDARD : gives gaussian some life but won't affect others
+// NONE : minor performance saver as light won't need to be redrawn
+// STANDARD : gives gaussian some life but won't affect others (default)
 // FIRE : light flickers nicely with all light types
 #macro FLICKER_NONE 0
 #macro FLICKER_STANDARD 0.6
@@ -45,3 +45,15 @@
 // GAME_FPS : the fps the game *should* run at according to the setting 
 // specified in Game Maker's Game Options
 #macro GAME_FPS game_get_speed(gamespeed_fps)
+
+// LIGHTCOLORS : common color values for lights
+#macro LIGHTCOLOR_RED color_from_html_hex("#ffbcb8")
+#macro LIGHTCOLOR_ORANGE color_from_html_hex("#ffdcb8")
+#macro LIGHTCOLOR_YELLOW color_from_html_hex("#fff7b8")
+#macro LIGHTCOLOR_GREEN color_from_html_hex("#94fa7a")
+#macro LIGHTCOLOR_AQUA color_from_html_hex("#8cf9ff")
+#macro LIGHTCOLOR_SKYBLUE color_from_html_hex("#b8e6ff")
+#macro LIGHTCOLOR_BLUE color_from_html_hex("#b9b8ff")
+#macro LIGHTCOLOR_PURPLE color_from_html_hex("#e4b8ff")
+#macro LIGHTCOLOR_PINK color_from_html_hex("#ffb8f8")
+#macro LIGHTCOLOR_SALMON color_from_html_hex("#ffb8d4")
