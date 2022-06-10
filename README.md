@@ -10,6 +10,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * ~~Allows for bouncy objects~~
   * ~~Allows for per object gravity or game-wide gravity, which can be toggled on the fly~~
   * ~~Gravity and physics values can be set in the room editor~~
+
 * ~~Camera~~
   * ~~Allows for deactivation of objects outside the view~~
   * ~~Allows for a list of objects to be exempted from deactivation~~
@@ -18,6 +19,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * ~~Allows for tinting~~
   * ~~Allows for camera shaking~~
   * ~~Allows for a changeable target that can be changed on the fly with an instance_id or object index~~
+
 * Input and Button Mapping
   * ~~Allows for remapping of inputs~~
   * Allows inputs from ~~keyboard, mouse /~~ touch ~~or gamepad~~
@@ -35,6 +37,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * ~~Pause~~
   * Gamepad buttons are automatically renamed based on the type of controller (X for Sony, B for Nintendo, A for Xbox or general)
   * Gamepad analog sticks are treated in the same fashion as the d-pad
+
 * In-Game Debugger
   * ~~Typing "debug" on a keyboard brings up the debug console, similar to Minecraft~~
   * ~~Pressing up on the keyboard retrieves a brief history of typed commands~~
@@ -45,6 +48,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * Spawn command -- spawn an instance of an object either at the center of the current view, or at a specified x and y coordinate
   * Remove command -- remove an instance or all objects of a particular object index
   * Run command -- run a user-made script
+
 * Lighting Engine
   * ~~Relatively lightweight -- can easily handle 100 on-screen light sources on any platform (significantly more on windows, linux and mac os)~~
   * ~~Doesn't redraw lights or shadows if not necessary (light isn't moving, or lighting isn't on, or ambient light is too strong)~~
@@ -59,6 +63,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * ~~Lighting engine automatically halves framerate if the game's framerate falls below it's target (eg: gets 50 fps when aiming for 60)~~
   * ~~Has 3 lighting modes (gaussian, retro banded, and retro dithered)~~
   * Support for setting an individual light's sprite so that things like flashlights and light beams can be easily created
+
 * Simple Animation Engine
   * Allows for basic animations on instances without requiring additional sprites
   * Animations include
@@ -67,6 +72,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Flickering -- apply a flicker / fuzz to an instance; the type (flicker or fuzz) and period of time (in milliseconds) are controllable; time can be set to instant (0) or infinity
     * Coloring -- apply a color to a sprite, fading the color in over a period of milliseconds; the time can be instant (0) or infinity
     * Rotation -- apply a rotation to a sprite over a period of milliseconds; can control whether the sprite should return to it's previous angle during the animation window or simply rotate to the new target angle 
+
 * Dialogue Engine & Translation
   * Allows for easy translation, as all strings are loaded from a separate text file based on the language setting
   * Allows for any object with the proper variables to speak
@@ -95,6 +101,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Wave -- specified by using a wave tag (eg: This is normal text [wave]but this text waves up and down)
     * Flicker -- specified by using a flicker tag (eg: This is normal text [flicker]but this text flickers like static)
     * Font Change -- specified by using a font tag (eg: [FNT_Normal]This is the normal font [FNT_Small]but this is the small font); please note, the text bubble and box will not re-adjust spacing for bigger and smaller fonts, so you may want to test this out to ensure it looks ok
+
 * Sound & Music Engine
   * Sounds are played with spacial awareness (eg: sounds coming from an instance on the left side of the player object will play more out of the left speaker, and sounds made by instances further from the player object will be quieter than those made by instances directly beside the player object)
   * Spacial awareness target can be set on the fly
@@ -103,6 +110,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * Music and SFX volume can be changed on the fly (eg: in a settings menu)
   * Music can be faded in and out on the fly
   * Simply changing the music track will automatically fade out the currently playing music for a specified amount of time and instantly play the new track once the old one is totally faded out
+
 * Rooms & Transitions
   * Allows every room to show an optional title, subtitle and banner sprite when the room is loaded
   * Allows every room to change the background music automatically when loaded, without requiring any code, and will fade out music with the room transition if the next room is supposed to play a different track
@@ -115,11 +123,13 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * Triggered by a collision with a room transition object
     * Allows developer to specify where the player object should be placed in the next room
     * Allows the developer to specify if the player object should have a vertical or horizontal speed applied to it (eg: should the character walk into the room)
+
 * Menu System
   * Allows menus to be created in the Room Editor
   * Allows for navigation to occur via touch, mouse and keyboard, or controller
   * Allows buttons to have text, sprite, color, and action all set within the room editor or programmatically on the fly
   * Menus will put all game objects other than other menu elements into a frozen state, meaning pause menus can also be created easily in the room editor
+
 * Inventory System
   * Allows for creating a versatile inventory system from a 2d array
   * Every inventory entry will contain:
@@ -136,6 +146,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Custom sorting method based on a specified variable in the items, themselves
     * Sorting is done every time an object is added to the inventory
   * Many inventories can be created, managed, sorted and displayed via a set of inventory functions
+
 * Various additional functions for simplifying common needs
   * File opening, reading, writing and closing
   * Item finding
