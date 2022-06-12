@@ -12,7 +12,8 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * ~~Gravity and physics values can be set in the room editor~~
   * ~~Allow for sticky and icy walls and floors~~
   * ~~Allow for frictional forces such as water; also allow friction to allow speed ups and slow downs~~
-  * Allow for moving platforms
+  * ~~Allow for moving platforms~~
+  * Fix bug with precision != 0 performance hack
 
 * ~~Camera~~
   * ~~Allows for deactivation of objects outside the view~~
