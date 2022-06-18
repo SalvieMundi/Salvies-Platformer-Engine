@@ -150,6 +150,42 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Sorting is done every time an object is added to the inventory
   * Many inventories can be created, managed, sorted and displayed via a set of inventory functions
 
+* Particles
+  * Functions for creating common types of particles
+    * Dust: specify an x and y, decay (def: random(3) second), speed (def: random(0.25)), direction (def: random(359)), and gravity (def: 0)
+    * Ember: specify an x and y, decay (def: random(2) seconds), color (def: c_white), speed (def: random(2)), direction (def: 90), and gravity (def: 0)
+    * Smoke: specify an x and y, decay (def: random(3) second), speed (def: random(0.5)), and direction (def: 90)
+    * Impact: only callable from an object which has speed; will turn the calling object into an impact particle, doing the delete and create events
+  * Dust will have a partially transparent light gray sprite, and only be a few pixels wide; unless given gravity, just floats slowly in a random direction
+    * Good for showing impact when the player lands
+    * Can be used when walking or running, or sliding on walls to show friction between surfaces and the object that is moving along them
+    * Can be used in caves to create falling debris
+    * Can be used to help animate items breaking
+  * Ember will use a small fire-ball like sprite of just a few pixels width; works with the lighting engine; sprite and light are colored as specified
+    * Good for adding animation to fires and torches
+    * Can be used when defeating an enemy to give a flashy feel
+    * Can be used to add animation to electricity sprites
+    * Can be used to create fireflies
+    * Can be used to add "lava bubbles" to magma pits or "lava drips" from ceilings
+  * Smoke will have a somewhat larger sprite, and will be a light gray "cloud" of smoke; unlike dust and ember, can't be assigned gravity; fades over time
+    * Good for adding animation to campfires
+    * Can be used for other "cloudy" effects
+  * Impact will have a monochrome sprite that will be a generic "explosion against a wall" type animation; for when firing a weapon into a wall
+    * Good for calling when bullets collide with objects that halt the bullets' momentum
+    * Can also be used when other objects like fireballs, lasers, etc. collide with any object which halt the movement of the projectile
+
+* Function Queue Lists
+  * Used to help animate in-game cutscenes
+  * Create a function queue list and assign it to a variable
+    * functionQueueList = create_function_queue_list();
+  * Add functions to the queue
+    * add_to_function_queue_list(queueList, object, function, delay);
+    * queueList: the FQL to add this function to
+    * object: the object which should perform the function (eg: if you want a character to walk left, this is the character that you want to move)
+    * function: the function or script that will be stored (eg: if you want a character to execute the walk_left() script, then type "walk_left")
+    * delay: amount of seconds to wait before executing this function (eg: you want the character to walk left 5 seconds after the last function executed)
+  * Start the queue list, and then watch your objects perform the specified functions assigned to them in chronological and timed order
+
 * Various additional functions for simplifying common needs
   * File opening, reading, writing and closing
   * Item finding
