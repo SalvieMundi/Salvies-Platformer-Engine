@@ -14,6 +14,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * ~~Allow for frictional forces such as water; also allow friction to allow speed ups and slow downs~~
   * ~~Allow for moving platforms~~
 
+
 * ~~Camera~~
   * ~~Allows for deactivation of objects outside the view~~
   * ~~Allows for a list of objects to be exempted from deactivation~~
@@ -22,6 +23,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * ~~Allows for tinting~~
   * ~~Allows for camera shaking~~
   * ~~Allows for a changeable target that can be changed on the fly with an instance_id or object index~~
+
 
 * Input and Button Mapping
   * ~~Allows for remapping of inputs~~
@@ -41,6 +43,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * Gamepad buttons are automatically renamed based on the type of controller (X for Sony, B for Nintendo, A for Xbox or general)
   * Gamepad analog sticks are treated in the same fashion as the d-pad
 
+
 * In-Game Debugger
   * ~~Typing "debug" on a keyboard brings up the debug console, similar to Minecraft~~
   * ~~Pressing up on the keyboard retrieves a brief history of typed commands~~
@@ -51,6 +54,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * Spawn command -- spawn an instance of an object either at the center of the current view, or at a specified x and y coordinate
   * Remove command -- remove an instance or all objects of a particular object index
   * Run command -- run a user-made script
+
 
 * Lighting Engine
   * ~~Relatively lightweight -- can easily handle 100 on-screen light sources on any platform (significantly more on windows, linux and mac os)~~
@@ -67,6 +71,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * ~~Has 3 lighting modes (gaussian, retro banded, and retro dithered)~~
   * Support for setting an individual light's sprite so that things like flashlights and light beams can be easily created
 
+
 * Simple Animation Engine
   * Allows for basic animations on instances without requiring additional sprites
   * Animations include
@@ -75,6 +80,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Flickering -- apply a flicker / fuzz to an instance; the type (flicker or fuzz) and period of time (in milliseconds) are controllable; time can be set to instant (0) or infinity
     * Coloring -- apply a color to a sprite, fading the color in over a period of milliseconds; the time can be instant (0) or infinity
     * Rotation -- apply a rotation to a sprite over a period of milliseconds; can control whether the sprite should return to it's previous angle during the animation window or simply rotate to the new target angle 
+
 
 * Dialogue Engine & Translation
   * Allows for easy translation, as all strings are loaded from a separate text file based on the language setting
@@ -105,6 +111,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Flicker -- specified by using a flicker tag (eg: This is normal text [flicker]but this text flickers like static)
     * Font Change -- specified by using a font tag (eg: [FNT_Normal]This is the normal font [FNT_Small]but this is the small font); please note, the text bubble and box will not re-adjust spacing for bigger and smaller fonts, so you may want to test this out to ensure it looks ok
 
+
 * Sound & Music Engine
   * Sounds are played with spacial awareness (eg: sounds coming from an instance on the left side of the player object will play more out of the left speaker, and sounds made by instances further from the player object will be quieter than those made by instances directly beside the player object)
   * Spacial awareness target can be set on the fly
@@ -113,6 +120,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * Music and SFX volume can be changed on the fly (eg: in a settings menu)
   * Music can be faded in and out on the fly
   * Simply changing the music track will automatically fade out the currently playing music for a specified amount of time and instantly play the new track once the old one is totally faded out
+
 
 * Rooms & Transitions
   * Allows every room to show an optional title, subtitle and banner sprite when the room is loaded
@@ -127,11 +135,13 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Allows developer to specify where the player object should be placed in the next room
     * Allows the developer to specify if the player object should have a vertical or horizontal speed applied to it (eg: should the character walk into the room)
 
+
 * Menu System
   * Allows menus to be created in the Room Editor
   * Allows for navigation to occur via touch, mouse and keyboard, or controller
   * Allows buttons to have text, sprite, color, and action all set within the room editor or programmatically on the fly
   * Menus will put all game objects other than other menu elements into a frozen state, meaning pause menus can also be created easily in the room editor
+
 
 * Inventory System
   * Allows for creating a versatile inventory system from a 2d array
@@ -149,6 +159,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Custom sorting method based on a specified variable in the items, themselves
     * Sorting is done every time an object is added to the inventory
   * Many inventories can be created, managed, sorted and displayed via a set of inventory functions
+
 
 * Particles
   * Functions for creating common types of particles
@@ -174,6 +185,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * Good for calling when bullets collide with objects that halt the bullets' momentum
     * Can also be used when other objects like fireballs, lasers, etc. collide with any object which halt the movement of the projectile
 
+
 * Function Queue Lists
   * Used to help animate in-game cutscenes
   * Create a function queue list and assign it to a variable
@@ -185,6 +197,36 @@ Items will be crossed off as they are completed. Goals which are being worked on
     * function: the function or script that will be stored (eg: if you want a character to execute the walk_left() script, then type "walk_left")
     * delay: amount of seconds to wait before executing this function (eg: you want the character to walk left 5 seconds after the last function executed)
   * Start the queue list, and then watch your objects perform the specified functions assigned to them in chronological and timed order
+
+
+* Progression Checklist System
+  * Tired of a million variables specifically used to just to keep the player from going places they aren't supposed to yet? Or having a million variables to control when certain NPC's say one line of text versus another based on where you are in the story? Or what about trying to implement achievements?
+  * Adding a handful of functions to an object, you can track it's programming, variables and events
+    * track_event(): call this at any point in any event to tell the Progression Checklist System that the calling object has performed the calling event
+    * notify_progression_checklist_system(message): call this to pass a message to the Progression Checklist System from the calling object
+  * Next, you create a progression checklist which will house all your progression checks and whether they have been completed or not
+    * progressionChecklist = create_progression_checklist();
+  * Now, add progression checks to the checklist
+    * add_progression_check(progressionChecklist, name, description, object, objectSelector[optional], messageOrEvent);
+    * progressionChecklist: the Progression Checklist to search against
+    * name: a string of your choosing -- best to keep it simple
+    * description: a string of your choosing -- only really used if you're using the Progression Checklist System for achievements or advancements
+    * object: the object you're searching for a message or event from
+    * objectSelector: name of a variable, or name and value of a variable (eg: only a ball with a variable "bounce", or only a ball where "bounce = true")
+    * messageOrEvent: the type of event (use game maker's constants like ev_alarm) or the message (from notify_progression_checklist_system) to look for
+  * The game will check this list every frame
+  * If a message or event has been tracked from an object fitting the objectSelector, the system will automatically mark that progression check as completed
+  * The game will only fire each progression check once
+  * To check if a certain progression check has been completed use one of the below functions
+    * check_progression(progressionChecklist, object, objectSelector[optional], messageOrEvent);
+    * check_progression(progressionChecklist, name);
+  * You can choose to search for progression status via the progression check's name or via the message / event that triggers it's completion
+  * This will keep all your story progression checks in one organized list
+  * This will allow you to search for progression checks via triggers rather than variables tucked away in some deep recess of your game's code
+  * This allows you to display the progression checklist to the player in the form of advancements, achievements or an in-game checklist
+    * show_progression_completions(progressionChecklist, descriptionOnly[def=true]) -- by default, only shows progress completions if they have a description
+    * show_progression_checklist(progressionChecklist, descriptionOnly[default=true]) -- shows the player a list of the progression checks
+
 
 * Various additional functions for simplifying common needs
   * File opening, reading, writing and closing
