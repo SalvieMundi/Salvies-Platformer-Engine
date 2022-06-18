@@ -23,7 +23,8 @@ enum lightingType {
 enum transitionType {
 	none,
 	fade,
-	swipe
+	swipe,
+	circle
 }
 
 enum playerState {

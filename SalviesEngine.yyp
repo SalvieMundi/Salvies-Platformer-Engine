@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"OBJ_MovingPlatformO","path":"objects/OBJ_MovingPlatformO/OBJ_MovingPlatformO.yy",},"order":6,},
     {"id":{"name":"PAR_ShadowCasterCircle","path":"objects/PAR_ShadowCasterCircle/PAR_ShadowCasterCircle.yy",},"order":2,},
     {"id":{"name":"SPR_DebugObject","path":"sprites/SPR_DebugObject/SPR_DebugObject.yy",},"order":2,},
     {"id":{"name":"OBJ_PassthruWallLeft","path":"objects/OBJ_PassthruWallLeft/OBJ_PassthruWallLeft.yy",},"order":3,},
@@ -57,6 +58,7 @@
     {"id":{"name":"PAR_Player","path":"objects/PAR_Player/PAR_Player.yy",},"order":0,},
     {"id":{"name":"SPR_DialogueBoxTail","path":"sprites/SPR_DialogueBoxTail/SPR_DialogueBoxTail.yy",},"order":1,},
     {"id":{"name":"SPR_CameraObject","path":"sprites/SPR_CameraObject/SPR_CameraObject.yy",},"order":0,},
+    {"id":{"name":"OBJ_MovingPlatform","path":"objects/OBJ_MovingPlatform/OBJ_MovingPlatform.yy",},"order":5,},
     {"id":{"name":"CleanupScripts","path":"scripts/CleanupScripts/CleanupScripts.yy",},"order":0,},
     {"id":{"name":"SPR_Trigger","path":"sprites/SPR_Trigger/SPR_Trigger.yy",},"order":7,},
     {"id":{"name":"NTE_Dialogue","path":"notes/NTE_Dialogue/NTE_Dialogue.yy",},"order":4,},
@@ -131,7 +133,7 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"en.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.5.0.8",
+    "IDEVersion": "2022.5.1.16",
   },
   "resourceVersion": "1.5",
   "name": "SalviesEngine",

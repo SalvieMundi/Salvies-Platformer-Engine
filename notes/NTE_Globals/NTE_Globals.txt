@@ -137,7 +137,7 @@ rooms = holds all information regarding the game's rooms
 	music = array of BGM this room should play
 	transition = holds all the information regarding room transitions
 		type = integer, type of transition that should be used 
-			   (transitionType.none, transitionType.fade, transitionType.swipe)
+			   (transitionType.none, transitionType.fade, transitionType.swipe, transitionType.circle)
 		modifier = string, affects transition type (color for fade, direction for swipe) 
 		shouldFadeMusic = boolean, whether the music should be faded with the transition
 		time = integer, how long the transition should be in frames

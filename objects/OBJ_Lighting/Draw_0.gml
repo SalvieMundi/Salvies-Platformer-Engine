@@ -40,7 +40,7 @@ if (global.lighting.ambient < 1) {
 				gpu_set_blendmode(bm_normal);
 			
 				// set up local variables to avoid recalculations
-				var lx, ly, lw, lh, lwd2, lhd2, lwp2, lhp2, imin, imax, i, absImax, pdmin, pdmax, minx, miny, maxx, maxy, a_min, a_max, a_test, lightSprite, lightColor, lightStrength, lightDistance, flicker, flickerX, flickerY, lightSurface, lightSurfaceSizeChanged, lightDepth, lightSurfaceExists, shadowSurface, shadowSurfaceExists, lightChanged;
+				var lx, ly, lw, lh, lwd2, lhd2, lwp2, lhp2, imin, imax, i, absImax, pdmin, pdmax, minx, miny, maxx, maxy, a_min, a_max, a_test, lightSprite, lightColor, lightStrength, lightDistance, flicker, flickerX, flickerY, lightSurface, lightSurfaceSizeChanged, lightDepth, lightSurfaceExists, shadowSurface, shadowSurfaceExists, lightChanged, nearestShadowCasters, nscSize, noShadowCasterMovement;
 		
 				lightDistance = self.lighting.distance;
 				lw = LIGHT_WD*lightDistance;
@@ -67,7 +67,25 @@ if (global.lighting.ambient < 1) {
 				lightSurfaceExists = surface_exists(lightSurface);
 				lightSurfaceSizeChanged = (lightSurfaceExists && (surface_get_width(lightSurface) != lwp2 || surface_get_height(lightSurface) != lhp2) ? true : false);
 				
-				lightChanged = (lx != xprevious || ly != yprevious || lightSurfaceSizeChanged ? true : false);
+				noShadowCasterMovement = true;
+				
+				if (global.lighting.shouldShadowCast) {
+					nearestShadowCasters = ds_list_create();
+					collision_rectangle_list(x-lwd2,y-lhd2,x+lwd2,y+lhd2,PAR_ShadowCaster,false,true,nearestShadowCasters,false);
+					nscSize = ds_list_size(nearestShadowCasters);
+				
+					for (var nsc=0; nsc<nscSize; nsc++) {
+						var sc = ds_list_find_value(nearestShadowCasters, nsc);
+						if (round(sc.x) != round(sc.xprevious) || round(sc.y) != round(sc.yprevious)) {
+							noShadowCasterMovement = false;
+							nsc = nscSize;
+						}
+					}
+				
+					ds_list_destroy(nearestShadowCasters);
+				}
+				
+				lightChanged = (lx != xprevious || ly != yprevious || lightSurfaceSizeChanged || !noShadowCasterMovement ? true : false);
 				
 				// don't redraw the light's surface if it exists and the light hasn't moved or changed size
 				if (!lightSurfaceExists || !shadowSurfaceExists || lightChanged || flicker != 0) {
@@ -144,11 +162,11 @@ if (global.lighting.ambient < 1) {
 									maxx = px[0];
 									maxy = py[0];
   
-									imin = -2;
-									imax = -2;
+									imin = 0;
+									imax = 0;
 									a_test = point_direction(lx, ly, x, y);
-									a_min = -1;
-									a_max = -1;
+									a_min = 0;
+									a_max = 0;
   
 									for (i = 0; i < 4; i++) {
 										if (px[i] < minx)
@@ -232,7 +250,7 @@ if (global.lighting.ambient < 1) {
 	
 	if (camL != camX || camT != camY) {
 		draw_rectangle_color(camX, camY, camL-1, camT+camH+(camT-camY), ambientColor, ambientColor, ambientColor, ambientColor, false);
-		draw_rectangle_color(camL, camY, camL+camW, camT-1, ambientColor, ambientColor, ambientColor, ambientColor, false);
+		draw_rectangle_color(camL, camY, camX+camW, camT-1, ambientColor, ambientColor, ambientColor, ambientColor, false);
 	}
 	
 	gpu_set_blendmode(bm_normal);
