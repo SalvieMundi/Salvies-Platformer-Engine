@@ -125,7 +125,7 @@ function instantiate_light_emitter_structs() {
 			distance : 1,
 			strength : 1,
 			clr : c_white,
-			flicker : FLICKER_STANDARD,
+			flicker : FLICKER_NONE,
 			lightSurface : noone,
 			shadowSurface : noone,
 			lightSprite : pointer_null
@@ -135,7 +135,7 @@ function instantiate_light_emitter_structs() {
 		self.lighting.distance = 1;
 		self.lighting.strength = 1;
 		self.lighting.clr = c_white;
-		self.lighting.flicker = FLICKER_STANDARD;
+		self.lighting.flicker = FLICKER_NONE;
 		self.lighting.lightSurface = noone;
 		self.lighting.shadowSurface = noone;
 		self.lighting.lightSprite = pointer_null;

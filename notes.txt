@@ -1,0 +1,7 @@
+backlog
+
+1. create options for custom sized lights
+2. find a way to deactivate casters!!!
+
+tomorrow!
+animations!

@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "PAR_ShadowCaster",
-    "path": "objects/PAR_ShadowCaster/PAR_ShadowCaster.yy",
+    "name": "PAR_Wall",
+    "path": "objects/PAR_Wall/PAR_Wall.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -27,6 +27,8 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
     {"varType":1,"value":"5","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"depth","tags":[],"resourceType":"GMObjectProperty",},
@@ -37,7 +39,7 @@
     "path": "folders/Objects/Collidables.yy",
   },
   "resourceVersion": "1.0",
-  "name": "PAR_Wall",
+  "name": "OBJ_MovingPlatform",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -1,4 +1,4 @@
-/// @function						calculate_physics(animate_gravity);
+/// @function						calculate_physics(animate_gravity, precision);
 /// @desc							runs all the physics based calculations, call in step
 /// @arg {bool} [animate_gravity]	whether to automatically handle the gravity changing animation
 /// @arg {int} [precision]			pixel precision of collision checks; a performance vs accuracy option
@@ -120,21 +120,25 @@ function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 						if (!self.status.isGrounded) self.status.justLanded = true;
 						self.status.isGrounded = true;
 						self.status.groundingBlock = wall;
+						if (wall.vspeed != 0) self.spd.v += wall.vspeed;
 						i = collidersSz;
 					} else if (self.spd.h <= 0 && self.bbox_left >= wall.bbox_right && wall.status.right) {
 						if (!self.status.isGrounded) self.status.justLanded = true;
 						self.status.isGrounded = true;
 						self.status.groundingBlock = wall;
+						if (wall.vspeed != 0) self.spd.v += wall.vspeed;
 						i = collidersSz;
 					} else if (self.spd.v <= 0 && self.bbox_top >= wall.bbox_bottom && wall.status.bottom) {
 						if (!self.status.isGrounded) self.status.justLanded = true;
 						self.status.isGrounded = true;
 						self.status.groundingBlock = wall;
+						if (wall.hspeed != 0) self.spd.h += wall.hspeed;
 						i = collidersSz;
 					} else if (self.spd.v >= 0 && self.bbox_bottom <= wall.bbox_top && wall.status.top) {
 						if (!self.status.isGrounded) self.status.justLanded = true;
 						self.status.isGrounded = true;
 						self.status.groundingBlock = wall;
+						if (wall.hspeed != 0) self.spd.h += wall.hspeed;
 						i = collidersSz;
 					}
 				} else {
@@ -198,13 +202,15 @@ function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 		//check every pixel between current position and next position for collisions, react accordingly
 		if (self.physics.isCollidable) {
 			var hPrecision = (precision != 0 ? precision : (_gravStr == 0 ? 1 : _gravStr*0.5)); //precision in pixels
+			
 			var hInside = ds_list_create();
+			instance_place_list(round(self.coords.xPos), self.coords.yPos, PAR_Wall, hInside, false);
+			
 			var hColliders = ds_list_create();
 			var hCollidersSz = 0;
 			var hMax = max(abs(self.spd.h), hPrecision);
 				
 			for (var i=0; i<=hMax; i+=hPrecision) {
-				instance_place_list(round(self.coords.xPos), self.coords.yPos, PAR_Wall, hInside, false);
 				hCollidersSz = instance_place_list(self.coords.xPos + (sign(self.spd.h)*i), self.coords.yPos, PAR_Wall, hColliders, false);
 				
 				for (var j=0; j<hCollidersSz; j++) {
@@ -214,6 +220,7 @@ function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 						i -= hPrecision;
 						hPrecision = (_gravStr == 0 ? 1 : _gravStr*0.5);
 						hMax = max(abs(self.spd.h), hPrecision);
+						j=hCollidersSz;
 					} else {
 						if (hInst != noone && !is_in_list(hInst,hInside)) {
 							if (sign(self.spd.h) <= 0 && hInst.status.right) {
@@ -234,11 +241,24 @@ function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 							i = hMax;
 							if (self.physics.isBouncy) self.spd.h = -0.5 * self.spd.h;
 							else self.spd.h = 0;
+						} else if (hInst != noone && !instance_place(self.coords.xPos + (sign(self.spd.h)*(i-hPrecision)), self.coords.yPos, hInst)) {
+							if (sign(self.spd.h) <= 0 && hInst.status.right) {
+								self.coords.xPos = hInst.bbox_right + sprite_xoffset;
+								i = hMax;
+								if (self.physics.isBouncy) self.spd.h = -0.5 * self.spd.h;
+								else self.spd.h = 0;
+							}
+	
+							if (sign(self.spd.h) >= 0 && hInst.status.left) {
+								self.coords.xPos = hInst.bbox_left - (sprite_width - sprite_xoffset);
+								i = hMax;
+								if (self.physics.isBouncy) self.spd.h = -0.5 * self.spd.h;
+								else self.spd.h = 0;
+							}
 						}
 					}
 				}
 				
-				ds_list_clear(hInside);
 				ds_list_clear(hColliders);
 			}
 			
@@ -284,13 +304,15 @@ function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 		//check every pixel between current position and next position for collisions, react accordingly
 		if (self.physics.isCollidable) {
 			var vPrecision = (precision != 0 ? precision : (_gravStr == 0 ? 1 : _gravStr*0.5));
+			
 			var vInside = ds_list_create();
+			instance_place_list(self.coords.xPos, round(self.coords.yPos), PAR_Wall, vInside, false);
+				
 			var vColliders = ds_list_create();
 			var vCollidersSz = 0;
 			var vMax = max(abs(self.spd.v), vPrecision);
 				
 			for (var i=0; i<=vMax; i+=vPrecision) {
-				instance_place_list(self.coords.xPos, round(self.coords.yPos), PAR_Wall, vInside, false);
 				vCollidersSz = instance_place_list(self.coords.xPos, self.coords.yPos + (sign(self.spd.v)*i), PAR_Wall, vColliders, false);
 				
 				for (var j=0; j<vCollidersSz; j++) {
@@ -300,6 +322,7 @@ function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 						i -= vPrecision;
 						vPrecision = (_gravStr == 0 ? 1 : _gravStr*0.5);
 						vMax = max(abs(self.spd.v), vPrecision);
+						j=vCollidersSz;
 					} else {
 						if (vInst != noone && !is_in_list(vInst,vInside)) {
 							if (sign(self.spd.v) <= 0 && vInst.status.bottom) {
@@ -320,11 +343,24 @@ function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 							i = vMax;
 							if (self.physics.isBouncy) self.spd.v = -0.5 * self.spd.v;
 							else self.spd.v = 0;
+						} else if (vInst != noone && !instance_place(self.coords.xPos, self.coords.yPos + (sign(self.spd.v)*(i-vPrecision)), vInst)) {
+							if (sign(self.spd.v) <= 0 && vInst.status.bottom) {
+								self.coords.yPos = vInst.bbox_bottom + sprite_yoffset;
+								i = vMax;
+								if (self.physics.isBouncy) self.spd.v = -0.5 * self.spd.v;
+								else self.spd.v = 0;
+							}
+	
+							if (sign(self.spd.v) >= 0 && vInst.status.top) {
+								self.coords.yPos = vInst.bbox_top - (sprite_height - sprite_yoffset);
+								i = vMax;
+								if (self.physics.isBouncy) self.spd.v = -0.5 * self.spd.v;
+								else self.spd.v = 0;
+							}
 						}
 					}
 				}
 				
-				ds_list_clear(vInside);
 				ds_list_clear(vColliders);
 			}
 			
@@ -338,4 +374,16 @@ function calculate_physics(animate_gravity = false, precision = MIN_BLOCK_WD) {
 		self.vspeed = self.spd.v;
 	
 	#endregion
+}
+
+/// @function						push_objects();
+/// @desc							allows moving blocks to push things out of their way
+function push_objects() {
+	var _other = collision_rectangle(bbox_left, bbox_top-abs(vspeed)-1, bbox_right, bbox_bottom+abs(vspeed)+1, all, false, true);
+	if (_other != noone) {
+		if (variable_instance_exists(_other.id, "physics")) {
+			_other.y += self.vspeed;
+			if (place_meeting(x,y,_other)) _other.x += self.hspeed;
+		}
+	}
 }

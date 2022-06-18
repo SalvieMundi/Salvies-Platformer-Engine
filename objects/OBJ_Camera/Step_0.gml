@@ -64,3 +64,11 @@
 	global.camera.camB = global.camera.yPos + global.camera.ht;
 
 #endregion
+
+#region speed up deactivation if camera is moving or zooming
+
+	if (round(global.camera.xPos) != round(global.camera.xPrev) || round(global.camera.yPos) != round(global.camera.yPrev) || round(global.camera.wd) != round(global.resolution.internal.wd*global.camera.zoom)) {
+		if (alarm[1] > GAME_FPS / 15) alarm[1] = GAME_FPS / 15;
+	}
+	
+#endregion

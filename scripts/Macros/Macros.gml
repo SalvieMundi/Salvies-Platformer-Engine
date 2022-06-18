@@ -3,7 +3,7 @@
 // be passed through, skipping collision events with blocks. purely 
 // used to save performance when many physics objects appear together on
 // the screen. lower numbers cost performance, but are potentially more
-// "accurate."
+// "accurate." a value of zero is 100% accuracy, no performance gains
 #macro MIN_BLOCK_WD 7
 
 // LIGHTING_DEPTH : what layer depth the lighting is drawn between. Any
