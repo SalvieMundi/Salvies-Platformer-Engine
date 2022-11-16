@@ -27,20 +27,11 @@ Items will be crossed off as they are completed. Goals which are being worked on
 
 * Input and Button Mapping
   * ~~Allows for remapping of inputs~~
-  * Allows inputs from ~~keyboard, mouse /~~ touch ~~or gamepad~~
+  * ~~Allows inputs from keyboard, mouse / touch or gamepad~~
   * ~~Allows for up to four controllers to be connected~~
   * ~~Controllers are automatically stored, cleared and re-arranged for easy access~~
-  * ~~Allows for the following inputs (these can be mapped to any kind of action, but these are the most common types of inputs for platformers)~~
-    * ~~Up~~
-    * ~~Down~~
-    * ~~Left~~
-    * ~~Right~~
-    * ~~Jump~~
-    * ~~Attack~~
-    * ~~Interact~~
-    * ~~Special~~
-    * ~~Pause~~
-  * Gamepad buttons are automatically renamed based on the type of controller (X for Sony, B for Nintendo, A for Xbox or general)
+  * ~~Inputs are completely customizable, name-able, and can be added to, removed or have a key, button or mouse button assigned to them~~
+  * ~~Gamepad buttons are automatically renamed based on the type of controller (X for Sony, B for Nintendo, A for Xbox or general)~~
   * Gamepad analog sticks are treated in the same fashion as the d-pad
 
 
@@ -56,7 +47,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * Run command -- run a user-made script
 
 
-* Lighting Engine
+* ~~Lighting Engine~~
   * ~~Relatively lightweight -- can easily handle 100 on-screen light sources on any platform (significantly more on windows, linux and mac os)~~
   * ~~Doesn't redraw lights or shadows if not necessary (light isn't moving, or lighting isn't on, or ambient light is too strong)~~
   * ~~Works with all rectangular collision masks (circular objects can also work if the mask is set up correctly)~~
@@ -69,7 +60,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * ~~Lighting engine can have a framerate independent of the game in order to increase performance~~
   * ~~Lighting engine automatically halves framerate if the game's framerate falls below it's target (eg: gets 50 fps when aiming for 60)~~
   * ~~Has 3 lighting modes (gaussian, retro banded, and retro dithered)~~
-  * Support for setting an individual light's sprite so that things like flashlights and light beams can be easily created
+  * ~~Support for setting an individual light's sprite so that things like flashlights and light beams can be easily created~~
 
 
 * Simple Animation Engine
@@ -137,8 +128,8 @@ Items will be crossed off as they are completed. Goals which are being worked on
 
 
 * Menu System
-  * Allows menus to be created in the Room Editor
-  * Allows for navigation to occur via touch, mouse and keyboard, or controller
+  * ~~Allows menus to be created in the Room Editor~~
+  * ~~Allows for navigation to occur via touch, mouse and keyboard, or controller~~
   * Allows buttons to have text, sprite, color, and action all set within the room editor or programmatically on the fly
   * Menus will put all game objects other than other menu elements into a frozen state, meaning pause menus can also be created easily in the room editor
 
