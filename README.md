@@ -139,6 +139,7 @@ Items will be crossed off as they are completed. Goals which are being worked on
   * Every inventory entry will contain:
     * Object index (eg: OBJ_Orange)
     * Object amount (eg: 3)
+    * Data tags object (eg: { eaten: false, restores: 12 })
   * When selected from inventory, the object amount will drop (and be removed if necessary), and the inventory script function set in the object will be executed.
   * Three types of built-in Inventory can be displayed:
     * Simple List -- a small list of items is shown via text, with the selected entry being highlighted in a specified color; pressing as specified button will exit the list, and pressing another specified button will use an item; if the inventory is too large to show on screen, then a scroll bar will be displayed and the list will automatically scroll vertically; the names for the items are specified in the items themselves in an inventory name variable
